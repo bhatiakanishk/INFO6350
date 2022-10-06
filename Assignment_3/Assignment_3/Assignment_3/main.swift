@@ -8,3 +8,4 @@ import Foundation
 
 //Functions
 //1. Create a function that implements the factorial operator( ! )
+//2.
