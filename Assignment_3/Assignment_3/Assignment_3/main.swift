@@ -112,13 +112,12 @@ IpadPro5.sizeOfScreen()
 //• If the input is all numbers print ‘Mobile Number in Digits’ followed by the number
 //• Otherwise, print ‘Mobile Number in String’ followed by the String entered
 print("Enter the mobile number: ")
-if let input = readLine(){
-    if let digits = Int(input){
-        print("Mobile Number in Digits: \(digits)")
-    } else if input == ""{
-        print("No Mobile Number")
-    } else{
-        print("Mobile Number in String: \(input)")
+let input: String? = readLine()
+if input != nil {
+    if(Int(input!) != nil){
+        print("Mobile Number in Digits: \(input!)")
+    } else {
+        print("Mobile Number in String: \(input!)")
     }
 }
 
