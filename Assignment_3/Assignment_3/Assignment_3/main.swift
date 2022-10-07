@@ -23,4 +23,32 @@ print("\(num)! = \(result)")
 
 
 //2.Create a function that takes an array of integers as input and split it into two arrays of odd and even integers. Print the result on the console(two arrays).
+func splitArray(arr: [Int]) -> (odd: [Int], even: [Int]){
+    var oddArray: [Int] = []
+    var evenArray: [Int] = []
+    
+    for x in arr {
+        if(x.isMultiple(of: 2)){
+            evenArray.append(x)
+        } else {
+            oddArray.append(x)
+        }
+    }
+    return (oddArray, evenArray)
+}
+
+let split = splitArray(arr: [1,2,3,4])
+print(split)
+
 //3. Create a function that takes a string as input and checks whether the string is palindrome or not. Print the result on the console (true or false).
+func isPalindrome(str: String) -> Bool {
+    let reversedString = String(str.reversed())
+    
+    if(str != "" && str == reversedString) {
+        return true
+    } else {
+        return false
+    }
+}
+
+print(isPalindrome(str: "nitin"))
