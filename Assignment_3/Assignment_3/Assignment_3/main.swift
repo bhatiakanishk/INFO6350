@@ -81,3 +81,27 @@ std.changeGPA()
 
 //3. Print the new value of all the four properties on the console
 print(std)
+
+//Classes
+//1. Create a class Ipad. This class should have
+//• an empty function doesSupportApplePencil()
+//• an empty function sizeOfScreen()
+class Ipad {
+    func doesSupportApplePencil(){}
+    func sizeOfScreen(){}
+}
+
+//2. Create a classe (for example IpadPro5) as a subclass of Ipad and override these functions.
+class IpadPro: Ipad {
+    override func doesSupportApplePencil() {
+        print("Override func doesSupportApplePencil()")
+    }
+    override func sizeOfScreen() {
+        print("Override func sizeOfScreen()")
+    }
+}
+
+//3. Call these functions
+var IpadPro5 = IpadPro()
+IpadPro5.doesSupportApplePencil()
+IpadPro5.sizeOfScreen()
