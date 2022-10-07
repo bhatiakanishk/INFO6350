@@ -105,3 +105,21 @@ class IpadPro: Ipad {
 var IpadPro5 = IpadPro()
 IpadPro5.doesSupportApplePencil()
 IpadPro5.sizeOfScreen()
+
+//Optionals
+//1. Ask the user to enter Mobile Number, and take input using the command line.
+//• If no input was provided print ‘No Mobile number provided’
+//• If the input is all numbers print ‘Mobile Number in Digits’ followed by the number
+//• Otherwise, print ‘Mobile Number in String’ followed by the String entered
+
+print("Enter the mobile number: ")
+var mobileNumber: String? = readLine()
+
+if mobileNumber == ""
+{
+    print("No Mobile Number")
+} else if mobileNumber != nil {
+    //print("Mobile Number in Digits")
+} else {
+    //print("Mobile Number in String")
+}
