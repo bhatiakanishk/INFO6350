@@ -111,7 +111,6 @@ IpadPro5.sizeOfScreen()
 //• If no input was provided print ‘No Mobile number provided’
 //• If the input is all numbers print ‘Mobile Number in Digits’ followed by the number
 //• Otherwise, print ‘Mobile Number in String’ followed by the String entered
-
 print("Enter the mobile number: ")
 if let input = readLine(){
     if let digits = Int(input){
@@ -121,4 +120,15 @@ if let input = readLine(){
     } else{
         print("Mobile Number in String: \(input)")
     }
+}
+
+//Protocols
+//1. Create a protocol TransportationTool. This protocol should have
+//• a function that returns the number of wheels
+//• a function that returns the way of transportation (in the air, on the ground, on the water).
+//• a function that takes place of departure and destination as inputs and prints a sentence like “From xx to xx by xx”.
+//2. Define two classes that conform to this protocol. (car, ship, bicycle, etc.)
+
+protocol TransportationTool {
+    
 }
