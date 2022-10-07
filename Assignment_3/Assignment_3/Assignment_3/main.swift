@@ -132,3 +132,12 @@ if let input = readLine(){
 protocol TransportationTool {
     
 }
+
+//Closures
+//1. Create a closure that takes two Integers as inputs and returns the sum.
+var sum = { (num1: Int, num2: Int) -> (Int) in
+    let sum = num1 + num2
+    return sum
+}
+var sumOfTwo = sum(2,3)
+print("Sum = ", sumOfTwo)
