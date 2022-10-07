@@ -52,3 +52,32 @@ func isPalindrome(str: String) -> Bool {
 }
 
 print(isPalindrome(str: "nitin"))
+
+
+//Structures
+//1. Create a structure Student. This structure should have
+//• four properties: name, age, id, and GPA.
+//• a function that can change the name.
+//• a function that can change the GPA.
+struct Student {
+    var name: String
+    var age: Int
+    var id: Int
+    var GPA: Double
+    
+    mutating func changeName() {
+        name = "Java"
+    }
+    
+    mutating func changeGPA() {
+        GPA = 4.0
+    }
+}
+
+//2. Create a student instance and call these functions.
+var std = Student(name: "Kanishk", age: 24, id: 256, GPA: 3.4)
+std.changeName()
+std.changeGPA()
+
+//3. Print the new value of all the four properties on the console
+print(std)
