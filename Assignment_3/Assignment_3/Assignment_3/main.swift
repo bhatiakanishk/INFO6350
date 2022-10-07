@@ -126,11 +126,50 @@ if input != nil {
 //• a function that returns the number of wheels
 //• a function that returns the way of transportation (in the air, on the ground, on the water).
 //• a function that takes place of departure and destination as inputs and prints a sentence like “From xx to xx by xx”.
-//2. Define two classes that conform to this protocol. (car, ship, bicycle, etc.)
-
 protocol TransportationTool {
-    
+    func numberOfWheels() -> Int
+    func wayOfTransportation() -> String
+    func fromTo(from: String, to: String)
 }
+//2. Define two classes that conform to this protocol. (car, ship, bicycle, etc.)
+class Bicycle: TransportationTool{
+    let wheels = 2
+    let transportation = "on the ground"
+    
+    func numberOfWheels() -> Int {
+        return wheels
+    }
+    
+    func wayOfTransportation() -> String {
+        return transportation
+    }
+    
+    func fromTo(from: String, to: String) {
+        print("From \(from) to \(to) by \(numberOfWheels()) wheel/s \(wayOfTransportation())")
+    }
+}
+
+class Aeroplane: TransportationTool{
+    let wheels = 18
+    let transportation = "in the air"
+    
+    func numberOfWheels() -> Int {
+        return wheels
+    }
+    
+    func wayOfTransportation() -> String {
+        return transportation
+    }
+    
+    func fromTo(from: String, to: String) {
+        print("From \(from) to \(to) by \(numberOfWheels()) wheel/s \(wayOfTransportation())")
+    }
+}
+
+var bicycle = Bicycle()
+bicycle.fromTo(from: "Snell Library", to: "Ruggels Station")
+var aeroplane = Aeroplane()
+aeroplane.fromTo(from: "Boston", to: "Mumbai")
 
 //Closures
 //1. Create a closure that takes two Integers as inputs and returns the sum.
