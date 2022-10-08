@@ -182,10 +182,24 @@ print("Sum = ", sumOfTwo)
 
 //Enumerations
 //1. Rewrite the way of transportation of TransportationTool into an enumeration.
+enum WayOfTransportation{
+    case bicycle
+    case aeroplane
+}
+
 //2. Create an associate enumeration that has:
 //• a case GPA that associates two Double values(like 3.9, 4.0, 2.6).
 //• a case Grade that associates two String values(like “A”,”B”,”C”).
+enum Scoring{
+    case GPA(Double, Double)
+    case Grade(String, String)
+}
+
 //3. Create a GPA enumeration instance and Grade enumeration instance
+var GPAOfStudent = Scoring.GPA(3.5, 4.0)
+var GradeOfStudent = Scoring.Grade("B", "A")
+print(GPAOfStudent)
+print(GradeOfStudent)
 
 //Extensions
 //1. Create a class Distance that has a property:  valueInKilometer.
