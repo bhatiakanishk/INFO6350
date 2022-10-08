@@ -203,4 +203,18 @@ print(GradeOfStudent)
 
 //Extensions
 //1. Create a class Distance that has a property:  valueInKilometer.
+class Distance{
+    var valueInKilometer: Double = 0.0
+}
+
 //2. Create an extension to the Distance class that has: a function that returns the mile value of valueInKilometer.
+extension Distance{
+    func kilometerToMile() -> Double {
+        return (valueInKilometer * 0.621371)
+    }
+}
+
+var distance = Distance()
+distance.valueInKilometer = 200
+print("Distance in kilometers is \(distance.valueInKilometer) kms")
+print("Distance in miles is \(distance.kilometerToMile()) miles")
