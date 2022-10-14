@@ -59,9 +59,17 @@ class Account {
 }
 
 class TeamLeader: Account {
+    func printMenu() {
+        print("Enter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Exit")
+        var printOption = Int(readLine() ?? "")
+    }
+    
     func createTask(){
         print("Enter Task description:")
-        let taskDescription = readLine()
+        let taskDescription = readLine() ?? ""
+        print("Enter Account ID:")
+        let accountID = Int(readLine() ?? "0") ?? 0
+        tasks.append(Task(description: taskDescription, status: .todo, id: generateTaskId(), assignedMember: accountID))
     }
     
     func updateDescTask(){
@@ -115,6 +123,11 @@ class TeamLeader: Account {
 }
 
 class TeamMember: Account {
+    func printMenu() {
+        print("Enter an option: \n1. View Task \n2. Update Task Status \n3. Exit")
+        var printOption = Int(readLine() ?? "")
+    }
+    
     func viewTask(){
         print(tasks.filter({ $0.assignedMember == self.id }))
     }
