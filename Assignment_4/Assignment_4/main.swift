@@ -42,6 +42,7 @@ class Account {
     let username: String
     let password: String
     let displayName: String
+    var onGoingTaskCount: Int = 0
     
     enum accountType {
         case teamLeader
@@ -59,42 +60,105 @@ class Account {
 
 class TeamLeader: Account {
     func createTask(){
-        
+        print("Enter Task description:")
+        let taskDescription = readLine()
     }
-    func updateDescTask(){}
-    func updateMemberTask(){}
-    func viewTask(){}
-    func deleteTask(){}
+    
+    func updateDescTask(){
+        print("Enter Task ID:")
+        let taskID = Int(readLine() ?? "0")
+        print("Enter new description: ")
+        let updateDescription = readLine()
+        if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
+            tasks[taskIndex].description = updateDescription ?? ""
+        }
+    }
+    
+    func updateMemberTask(){
+        print("Enter Task ID:")
+        let taskID = Int(readLine() ?? "0")
+        print("Enter Member ID: ")
+        let memberId = Int(readLine() ?? "0")
+        if let account = accounts.first(where: { $0.id == memberId }) {
+            if account.onGoingTaskCount >= 2 {
+                print("Cannot Assign")
+            } else if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}){
+                if tasks[taskIndex].status == .todo {
+                    tasks[taskIndex].assignedMember = memberId ?? 0
+                } else {
+                    print("Cannot change status of on going or done task")
+                }
+            } else {
+                print("Invalid Account ID")
+            }
+        }
+    }
+    
+    func viewTasks(){
+        print(tasks)
+    }
+    func deleteTask(){
+        print("Enter Task ID:")
+        let taskID = Int(readLine() ?? "0")
+        if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
+            //tasks[taskIndex].status = Task.taskStatus(rawValue: status ?? 1) ?? .todo
+            if tasks[taskIndex].status != .doing {
+                tasks.remove(at: taskIndex)
+                print("Delete Success")
+            } else {
+                print("Cannot delete on going task")
+            }
+        } else {
+            print("Enter valid task id")
+        }
+    }
 }
 
 class TeamMember: Account {
-    func viewTask(){}
+    func viewTask(){
+        print(tasks.filter({ $0.assignedMember == self.id }))
+    }
+    
     func updateTaskStatus(){
         print("Enter Task ID:")
-        let taskID = readLine()
+        let taskID = Int(readLine() ?? "0")
+        print("Enter Status: \n1. Todo \n2. Doing \n3. Done")
+        let status = Int(readLine() ?? "0")
+        if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
+            tasks[taskIndex].status = Task.taskStatus(rawValue: status ?? 1) ?? .todo
+        }
     }
 }
 
 class Task {
-    let description: String
-    let status: taskStatus
+    var description: String
+    var status: taskStatus
     let id: Int
-    let assignedMember: Account
-    enum taskStatus {
-        case todo
+    var assignedMember: Int
+    enum taskStatus: Int {
+        case todo = 1
         case doing
         case done
     }
-    init(description: String, status: taskStatus, id: Int, assignedMember: Account) {
+    init(description: String, status: taskStatus, id: Int, assignedMember: Int) {
         self.description = description
         self.status = status
         self.id = id
         self.assignedMember = assignedMember
     }
+    
+    func updateStatus(status: taskStatus){
+        self.status = status
+    }
 }
 
 var accounts: [Account] = []
 var tasks: [Task] = []
+var taskCount = 0
+func generateTaskId() -> Int {
+    taskCount += 1
+    return taskCount
+}
 
 /*var accounts: [String: Account] = [:]
 accounts["gaurav"] = Account(role: .teamLeader, id: 10, username: "gaurav", password: "noob", displayName: "Gaurav")*/
