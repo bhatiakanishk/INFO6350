@@ -36,6 +36,8 @@
  */
 
 import Foundation
+
+//Account class with role, id, username, password, displayName, onGoingTaskCount
 class Account {
     let role: accountType
     let id: Int
@@ -43,12 +45,12 @@ class Account {
     let password: String
     let displayName: String
     var onGoingTaskCount: Int = 0
-    
+    //Enum accountType; teamLeader and teamMember
     enum accountType {
         case teamLeader
         case teamMember
     }
-    
+    //Class initializer
     init(role: accountType, id: Int, username: String, password: String, displayName: String) {
         self.role = role
         self.id = id
@@ -56,20 +58,22 @@ class Account {
         self.password = password
         self.displayName = displayName
     }
-    
+    //printMenu function
     func printMenu() {
+        //fatalError with message to stop execution
         fatalError("Must Override")
     }
 }
 
+//TeamLeader class of type Account
 class TeamLeader: Account {
-    
+    //Class Initializer
     init(id: Int, username: String, password: String, displayName: String) {
         super.init(role: .teamLeader, id: id, username: username, password: password, displayName: displayName)
     }
-    
+    //Function for teamLeader menu
     override func printMenu() {
-        print("Enter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Exit")
+        print("\nEnter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Logout \n7. Exit")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -84,15 +88,18 @@ class TeamLeader: Account {
             deleteTask()
         case 6:
             loginMenu()
+        case 7:
+            exit(0)
         default:
-            print("Invalid input")
+            print("Invalid input. Please select an option between 1 and 7")
         }
     }
     
+    //Function to create a task
     func createTask(){
-        print("Enter Task description:")
+        print("Enter the task description:")
         let taskDescription = readLine() ?? ""
-        print("Enter Account ID:")
+        print("Enter the account ID:")
         let accountID = Int(readLine() ?? "0") ?? 0
         tasks.append(Task(desc: taskDescription, status: .todo, id: generateTaskId(), assignedMember: accountID))
     }
@@ -214,17 +221,24 @@ class Task: CustomStringConvertible {
     }
 }
 
+//Empty account array
 var accounts: [Account] = []
+
+//Empty task array
 var tasks: [Task] = []
 var taskCount = 0
+
+//Function to generate task ID for new tasks
 func generateTaskId() -> Int {
     taskCount += 1
     return taskCount
 }
 
+//HashMap attempt
 /*var accounts: [String: Account] = [:]
  accounts["gaurav"] = Account(role: .teamLeader, id: 10, username: "gaurav", password: "noob", displayName: "Gaurav")*/
 
+//Appending teamLeaders and teamMembers to the accounts array
 accounts.append(TeamLeader(id: 10, username: "gaurav", password: "gaurav", displayName: "Gaurav"))
 accounts.append(TeamLeader(id: 11, username: "kanishk", password: "kanishk", displayName: "Kanishk"))
 accounts.append(TeamMember(id: 20, username: "raj", password: "raj", displayName: "Raj"))
