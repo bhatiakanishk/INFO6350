@@ -163,10 +163,10 @@ class TeamLeader: Account {
                 tasks.remove(at: taskIndex)
                 print("Delete Successful")
             } else {
-                print("Cannot delete on-going task")
+                print("Cannot delete on-going task\n")
             }
         } else {
-            print("Enter a valid task id")
+            print("Enter a valid task id\n")
         }
     }
 }
