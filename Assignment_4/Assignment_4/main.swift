@@ -4,7 +4,7 @@
 //
 //  Created by Kanishk Bhatia on 10/13/22.
 //
-/*Develop a command line Swift program to create a simple version of an agile software management.
+/* Develop a command line Swift program to create a simple version of an agile software management.
  A.    Account should have:
  •    role: Enumeration of TeamLeader / TeamMember.
  •    id: Int
@@ -56,12 +56,37 @@ class Account {
         self.password = password
         self.displayName = displayName
     }
+    
+    func printMenu() {
+        fatalError("Must Override")
+    }
 }
 
 class TeamLeader: Account {
-    func printMenu() {
+    
+    init(id: Int, username: String, password: String, displayName: String) {
+        super.init(role: .teamLeader, id: id, username: username, password: password, displayName: displayName)
+    }
+    
+    override func printMenu() {
         print("Enter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Exit")
-        var printOption = Int(readLine() ?? "")
+        let printOption = Int(readLine() ?? "")
+        switch printOption {
+        case 1:
+            createTask()
+        case 2:
+            updateDescTask()
+        case 3:
+            updateMemberTask()
+        case 4:
+            viewTasks()
+        case 5:
+            deleteTask()
+        case 6:
+            loginMenu()
+        default:
+            print("Invalid input")
+        }
     }
     
     func createTask(){
@@ -69,7 +94,7 @@ class TeamLeader: Account {
         let taskDescription = readLine() ?? ""
         print("Enter Account ID:")
         let accountID = Int(readLine() ?? "0") ?? 0
-        tasks.append(Task(description: taskDescription, status: .todo, id: generateTaskId(), assignedMember: accountID))
+        tasks.append(Task(desc: taskDescription, status: .todo, id: generateTaskId(), assignedMember: accountID))
     }
     
     func updateDescTask(){
@@ -78,7 +103,7 @@ class TeamLeader: Account {
         print("Enter new description: ")
         let updateDescription = readLine()
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
-            tasks[taskIndex].description = updateDescription ?? ""
+            tasks[taskIndex].desc = updateDescription ?? ""
         }
     }
     
@@ -123,9 +148,23 @@ class TeamLeader: Account {
 }
 
 class TeamMember: Account {
-    func printMenu() {
+    init(id: Int, username: String, password: String, displayName: String) {
+        super.init(role: .teamMember, id: id, username: username, password: password, displayName: displayName)
+    }
+    
+    override func printMenu() {
         print("Enter an option: \n1. View Task \n2. Update Task Status \n3. Exit")
-        var printOption = Int(readLine() ?? "")
+        let printOption = Int(readLine() ?? "")
+        switch printOption {
+        case 1:
+            viewTask()
+        case 2:
+            updateTaskStatus()
+        case 3:
+            exit(0)
+        default:
+            print("Invalid input")
+        }
     }
     
     func viewTask(){
@@ -136,15 +175,21 @@ class TeamMember: Account {
         print("Enter Task ID:")
         let taskID = Int(readLine() ?? "0")
         print("Enter Status: \n1. Todo \n2. Doing \n3. Done")
-        let status = Int(readLine() ?? "0")
+        let status = Int(readLine() ?? "0") ?? 1
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
-            tasks[taskIndex].status = Task.taskStatus(rawValue: status ?? 1) ?? .todo
+            let statusEnum = Task.taskStatus(rawValue: status) ?? .todo
+            tasks[taskIndex].status = statusEnum
+            if statusEnum == .doing {
+                self.onGoingTaskCount += 1
+            } else {
+                self.onGoingTaskCount -= 1
+            }
         }
     }
 }
 
-class Task {
-    var description: String
+class Task: CustomStringConvertible {
+    var desc: String
     var status: taskStatus
     let id: Int
     var assignedMember: Int
@@ -153,8 +198,8 @@ class Task {
         case doing
         case done
     }
-    init(description: String, status: taskStatus, id: Int, assignedMember: Int) {
-        self.description = description
+    init(desc: String, status: taskStatus, id: Int, assignedMember: Int) {
+        self.desc = desc
         self.status = status
         self.id = id
         self.assignedMember = assignedMember
@@ -162,6 +207,10 @@ class Task {
     
     func updateStatus(status: taskStatus){
         self.status = status
+    }
+    
+    var description: String {
+        return "\(id) \(status) \(assignedMember) \(desc)"
     }
 }
 
@@ -174,38 +223,46 @@ func generateTaskId() -> Int {
 }
 
 /*var accounts: [String: Account] = [:]
-accounts["gaurav"] = Account(role: .teamLeader, id: 10, username: "gaurav", password: "noob", displayName: "Gaurav")*/
+ accounts["gaurav"] = Account(role: .teamLeader, id: 10, username: "gaurav", password: "noob", displayName: "Gaurav")*/
 
-accounts.append(Account(role: .teamLeader, id: 10, username: "gaurav", password: "noob", displayName: "Gaurav"))
-accounts.append(Account(role: .teamLeader, id: 11, username: "kanishk", password: "testing", displayName: "Kanishk"))
-accounts.append(Account(role: .teamMember, id: 20, username: "raj", password: "raj1", displayName: "Raj"))
+accounts.append(TeamLeader(id: 10, username: "gaurav", password: "gaurav", displayName: "Gaurav"))
+accounts.append(TeamLeader(id: 11, username: "kanishk", password: "kanishk", displayName: "Kanishk"))
+accounts.append(TeamMember(id: 20, username: "raj", password: "raj", displayName: "Raj"))
 
 func loginMenu(){
     print("Enter username:")
+    let userName = readLine()
     print("Enter password:")
-    var userName = readLine()
-    var password = readLine()
+    let password = readLine()
     
-/*    if let account = accounts[userName] {
-        // we have the account here
-        if account.passwd == password {
-            // auth success
-        } else {
-            //in valid password
-        }
-    } else {
-        // user name does not exist
-    }*/
+    /*    if let account = accounts[userName] {
+     // we have the account here
+     if account.passwd == password {
+     // auth success
+     } else {
+     //in valid password
+     }
+     } else {
+     // user name does not exist
+     }*/
     
     
     if let account = accounts.first(where: { $0.username == userName }) {
         // we have the account here
         if account.password == password {
             // auth success
+            while (true){
+                account.printMenu()
+            }
         } else {
             //in valid password
+            print("Invalid Password")
         }
     } else {
         // user name does not exist
+        print("Username does not exist")
     }
 }
+
+
+loginMenu()
