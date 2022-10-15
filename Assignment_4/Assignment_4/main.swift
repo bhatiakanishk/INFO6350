@@ -223,17 +223,19 @@ class TeamMember: Account {
     }
 }
 
-//Task class
+//Task class with CustomStringConvertible to make debugging easy
 class Task: CustomStringConvertible {
     var desc: String
     var status: taskStatus
     let id: Int
     var assignedMember: Int
+    //Enum taskStatus of type Int
     enum taskStatus: Int {
         case todo = 1
         case doing
         case done
     }
+    //class initializer
     init(desc: String, status: taskStatus, id: Int, assignedMember: Int) {
         self.desc = desc
         self.status = status
@@ -241,12 +243,13 @@ class Task: CustomStringConvertible {
         self.assignedMember = assignedMember
     }
     
+    //function to update status of task
     func updateStatus(status: taskStatus){
         self.status = status
     }
     
     var description: String {
-        return "\(id) \(status) \(assignedMember) \(desc)"
+        return "ID: \(id) \nDescription: \(desc) \nMember: \(assignedMember) \nStatus: \(status)"
     }
 }
 
@@ -270,7 +273,9 @@ func generateTaskId() -> Int {
 //Appending teamLeaders and teamMembers to the accounts array
 accounts.append(TeamLeader(id: 10, username: "gaurav", password: "gaurav", displayName: "Gaurav"))
 accounts.append(TeamLeader(id: 11, username: "kanishk", password: "kanishk", displayName: "Kanishk"))
+
 accounts.append(TeamMember(id: 20, username: "raj", password: "raj", displayName: "Raj"))
+accounts.append(TeamMember(id: 21, username: "andy", password: "andy", displayName: "Andy"))
 
 //Function to input the account credentials from the user
 func loginMenu(){
