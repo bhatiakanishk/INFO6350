@@ -177,7 +177,7 @@ class TeamMember: Account {
     }
     
     override func printMenu() {
-        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Exit")
+        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -185,9 +185,11 @@ class TeamMember: Account {
         case 2:
             updateTaskStatus()
         case 3:
+            loginMenu()
+        case 4:
             exit(0)
         default:
-            print("Invalid input")
+            print("Invalid input\n")
         }
     }
     
