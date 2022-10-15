@@ -69,6 +69,7 @@ class Account {
 class TeamLeader: Account {
     //Class Initializer
     init(id: Int, username: String, password: String, displayName: String) {
+        //superclass version access
         super.init(role: .teamLeader, id: id, username: username, password: password, displayName: displayName)
     }
     //Override function for teamLeader menu
@@ -171,11 +172,13 @@ class TeamLeader: Account {
     }
 }
 
+//TeamMember class of type Account
 class TeamMember: Account {
     init(id: Int, username: String, password: String, displayName: String) {
+        //superclass version access
         super.init(role: .teamMember, id: id, username: username, password: password, displayName: displayName)
     }
-    
+    //Override function for teamMember menu
     override func printMenu() {
         print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
         let printOption = Int(readLine() ?? "")
@@ -193,21 +196,27 @@ class TeamMember: Account {
         }
     }
     
-    func viewTask(){
+    //Function to view the tasks of the logged in teamMember
+    func viewTask() {
         print(tasks.filter({ $0.assignedMember == self.id }))
     }
     
-    func updateTaskStatus(){
-        print("Enter Task ID:")
+    //Function to update the task status
+    func updateTaskStatus() {
+        print("Enter the task ID:")
+        //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter Status: \n1. Todo \n2. Doing \n3. Done")
+        print("Enter the status of the task: \n1. Todo \n2. Doing \n3. Done\n")
+        //Set Int 1 as the default if input is empty
         let status = Int(readLine() ?? "0") ?? 1
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
             let statusEnum = Task.taskStatus(rawValue: status) ?? .todo
             tasks[taskIndex].status = statusEnum
             if statusEnum == .doing {
+                //Increase the counter
                 self.onGoingTaskCount += 1
             } else {
+                //Decrease the counter
                 self.onGoingTaskCount -= 1
             }
         }
