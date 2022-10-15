@@ -177,7 +177,7 @@ class TeamMember: Account {
     }
     
     override func printMenu() {
-        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit")
+        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
