@@ -71,9 +71,9 @@ class TeamLeader: Account {
     init(id: Int, username: String, password: String, displayName: String) {
         super.init(role: .teamLeader, id: id, username: username, password: password, displayName: displayName)
     }
-    //Function for teamLeader menu
+    //Override function for teamLeader menu
     override func printMenu() {
-        print("\nEnter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Logout \n7. Exit")
+        print("\nEnter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Logout \n7. Exit\n")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -91,13 +91,13 @@ class TeamLeader: Account {
         case 7:
             exit(0)
         default:
-            print("Invalid input")
-            print("Please select an option between 1 and 7")
+            print("Invalid input\n")
+            print("Please select an option between 1 and 7\n")
         }
     }
     
     //Function to create a task
-    func createTask(){
+    func createTask() {
         print("Enter the account ID:")
         //Set 0 as the default if Int input is empty
         let accountID = Int(readLine() ?? "0") ?? 0
@@ -126,22 +126,22 @@ class TeamLeader: Account {
         print("Enter the task ID:")
         //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter the new member ID: ")
+        print("Enter the new member ID:")
         //Set a 0 String as the default if input is empty
         let memberId = Int(readLine() ?? "0")
         //$0 is the first parameter passed
         if let account = accounts.first(where: { $0.id == memberId }) {
             //>= 2 DOING tasks, this member should not be assigned new tasks
             if account.onGoingTaskCount >= 2 {
-                print("Cannot assign a new task")
+                print("Cannot assign a new task\n")
             } else if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}){
                 if tasks[taskIndex].status == .todo {
                     tasks[taskIndex].assignedMember = memberId ?? 0
                 } else {
-                    print("Cannot change status of the on-going or done task")
+                    print("Cannot change status of the on-going or done task\n")
                 }
             } else {
-                print("Invalid account ID")
+                print("Invalid account ID\n")
             }
         }
     }
@@ -161,7 +161,7 @@ class TeamLeader: Account {
             //tasks[taskIndex].status = Task.taskStatus(rawValue: status ?? 1) ?? .todo
             if tasks[taskIndex].status != .doing {
                 tasks.remove(at: taskIndex)
-                print("Delete Successful")
+                print("Delete Successful\n")
             } else {
                 print("Cannot delete on-going task\n")
             }
