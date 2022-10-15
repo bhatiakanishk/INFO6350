@@ -61,19 +61,21 @@ class Account {
     //printMenu function
     func printMenu() {
         //fatalError with message to stop execution
-        fatalError("Must Override")
+        fatalError("Must Override\n")
     }
 }
 
-//TeamLeader class of type Account
+//TeamLeader class of type Account with id, username, password, displayName
 class TeamLeader: Account {
     //Class Initializer
     init(id: Int, username: String, password: String, displayName: String) {
+        //Superclass version access
         super.init(role: .teamLeader, id: id, username: username, password: password, displayName: displayName)
     }
-    //Function for teamLeader menu
+    
+    //Override Function for teamLeader menu
     override func printMenu() {
-        print("\nEnter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Logout \n7. Exit")
+        print("\nEnter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Logout \n7. Exit\n")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -91,8 +93,8 @@ class TeamLeader: Account {
         case 7:
             exit(0)
         default:
-            print("Invalid input")
-            print("Please select an option between 1 and 7")
+            print("Invalid input\n")
+            print("Please select an option between 1 and 7\n")
         }
     }
     
@@ -106,6 +108,7 @@ class TeamLeader: Account {
         let taskDescription = readLine() ?? ""
         //Append the new task to the tasks array with the description, id, and assignedMemeber
         tasks.append(Task(desc: taskDescription, status: .todo, id: generateTaskId(), assignedMember: accountID))
+        print("Task creation successful\n")
     }
     
     //Function to update a task description
@@ -113,11 +116,14 @@ class TeamLeader: Account {
         print("Enter the task ID:")
         //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter the new description: ")
+        print("Enter the new description:")
         let updateDescription = readLine()
         //$0 is the first parameter passed
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
             tasks[taskIndex].desc = updateDescription ?? ""
+            print("Task description update successful\n")
+        } else {
+            print("Task description update failed\n")
         }
     }
     
@@ -133,15 +139,16 @@ class TeamLeader: Account {
         if let account = accounts.first(where: { $0.id == memberId }) {
             //>= 2 DOING tasks, this member should not be assigned new tasks
             if account.onGoingTaskCount >= 2 {
-                print("Cannot assign a new task")
+                print("Cannot assign a new task\n")
             } else if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}){
                 if tasks[taskIndex].status == .todo {
                     tasks[taskIndex].assignedMember = memberId ?? 0
+                    print("Assigned member update successful\n")
                 } else {
-                    print("Cannot change status of the on-going or done task")
+                    print("Cannot change status of the on-going or done task\n")
                 }
             } else {
-                print("Invalid account ID")
+                print("Invalid account ID\n")
             }
         }
     }
@@ -161,23 +168,26 @@ class TeamLeader: Account {
             //tasks[taskIndex].status = Task.taskStatus(rawValue: status ?? 1) ?? .todo
             if tasks[taskIndex].status != .doing {
                 tasks.remove(at: taskIndex)
-                print("Delete Successful")
+                print("Delete Successful\n")
             } else {
-                print("Cannot delete on-going task")
+                print("Cannot delete on-going task\n")
             }
         } else {
-            print("Enter a valid task id")
+            print("Enter a valid task ID\n")
         }
     }
 }
 
+//Team Member class of type Account with id, username, password, displayName
 class TeamMember: Account {
     init(id: Int, username: String, password: String, displayName: String) {
+        //Superclass version access
         super.init(role: .teamMember, id: id, username: username, password: password, displayName: displayName)
     }
     
+    //Override function for the TeamMember menu
     override func printMenu() {
-        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Exit")
+        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -185,27 +195,36 @@ class TeamMember: Account {
         case 2:
             updateTaskStatus()
         case 3:
+            loginMenu()
+        case 4:
             exit(0)
         default:
-            print("Invalid input")
+            print("Invalid input\n")
         }
     }
     
-    func viewTask(){
+    //Function fo view the task
+    func viewTask() {
+        //Only print the task of the logged in teamMember
         print(tasks.filter({ $0.assignedMember == self.id }))
     }
     
+    //Function to update the status of the task
     func updateTaskStatus(){
         print("Enter Task ID:")
+        //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter Status: \n1. Todo \n2. Doing \n3. Done")
+        print("Enter Status: \n1. Todo \n2. Doing \n3. Done\n")
+        //Set Int 1 as the default if input is empty
         let status = Int(readLine() ?? "0") ?? 1
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
             let statusEnum = Task.taskStatus(rawValue: status) ?? .todo
             tasks[taskIndex].status = statusEnum
             if statusEnum == .doing {
+                //Increase the counter if status updated to DOING
                 self.onGoingTaskCount += 1
             } else {
+                //Decrease the counter if status in not updated to DOING
                 self.onGoingTaskCount -= 1
             }
         }
