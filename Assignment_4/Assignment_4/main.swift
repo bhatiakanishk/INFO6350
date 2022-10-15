@@ -91,65 +91,82 @@ class TeamLeader: Account {
         case 7:
             exit(0)
         default:
-            print("Invalid input. Please select an option between 1 and 7")
+            print("Invalid input")
+            print("Please select an option between 1 and 7")
         }
     }
     
     //Function to create a task
     func createTask(){
-        print("Enter the task description:")
-        let taskDescription = readLine() ?? ""
         print("Enter the account ID:")
+        //Set 0 as the default if Int input is empty
         let accountID = Int(readLine() ?? "0") ?? 0
+        print("Enter the task description:")
+        //Set an empty String as the default if input is empty
+        let taskDescription = readLine() ?? ""
+        //Append the new task to the tasks array with the description, id, and assignedMemeber
         tasks.append(Task(desc: taskDescription, status: .todo, id: generateTaskId(), assignedMember: accountID))
     }
     
+    //Function to update a task description
     func updateDescTask(){
-        print("Enter Task ID:")
+        print("Enter the task ID:")
+        //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter new description: ")
+        print("Enter the new description: ")
         let updateDescription = readLine()
+        //$0 is the first parameter passed
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
             tasks[taskIndex].desc = updateDescription ?? ""
         }
     }
     
+    //Function to update the assigned member
     func updateMemberTask(){
-        print("Enter Task ID:")
+        print("Enter the task ID:")
+        //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter Member ID: ")
+        print("Enter the new member ID: ")
+        //Set a 0 String as the default if input is empty
         let memberId = Int(readLine() ?? "0")
+        //$0 is the first parameter passed
         if let account = accounts.first(where: { $0.id == memberId }) {
+            //>= 2 DOING tasks, this member should not be assigned new tasks
             if account.onGoingTaskCount >= 2 {
-                print("Cannot Assign")
+                print("Cannot assign a new task")
             } else if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}){
                 if tasks[taskIndex].status == .todo {
                     tasks[taskIndex].assignedMember = memberId ?? 0
                 } else {
-                    print("Cannot change status of on going or done task")
+                    print("Cannot change status of the on-going or done task")
                 }
             } else {
-                print("Invalid Account ID")
+                print("Invalid account ID")
             }
         }
     }
     
+    //Function to view all the tasks
     func viewTasks(){
         print(tasks)
     }
+    
+    //Function to delete a task
     func deleteTask(){
-        print("Enter Task ID:")
+        print("Enter the task ID:")
+        //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
+        //$0 is the first parameter passed
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
             //tasks[taskIndex].status = Task.taskStatus(rawValue: status ?? 1) ?? .todo
             if tasks[taskIndex].status != .doing {
                 tasks.remove(at: taskIndex)
-                print("Delete Success")
+                print("Delete Successful")
             } else {
-                print("Cannot delete on going task")
+                print("Cannot delete on-going task")
             }
         } else {
-            print("Enter valid task id")
+            print("Enter a valid task id")
         }
     }
 }
@@ -160,7 +177,7 @@ class TeamMember: Account {
     }
     
     override func printMenu() {
-        print("Enter an option: \n1. View Task \n2. Update Task Status \n3. Exit")
+        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Exit")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -243,6 +260,7 @@ accounts.append(TeamLeader(id: 10, username: "gaurav", password: "gaurav", displ
 accounts.append(TeamLeader(id: 11, username: "kanishk", password: "kanishk", displayName: "Kanishk"))
 accounts.append(TeamMember(id: 20, username: "raj", password: "raj", displayName: "Raj"))
 
+//Function to input the account credentials from the user
 func loginMenu(){
     print("Enter username:")
     let userName = readLine()
@@ -262,21 +280,21 @@ func loginMenu(){
     
     
     if let account = accounts.first(where: { $0.username == userName }) {
-        // we have the account here
+        //We have the account here
         if account.password == password {
-            // auth success
+            //Authorization successful
             while (true){
                 account.printMenu()
             }
         } else {
-            //in valid password
+            //Invalid password
             print("Invalid Password")
         }
     } else {
-        // user name does not exist
+        //Username does not exist
         print("Username does not exist")
     }
 }
 
-
+//Call the login menu
 loginMenu()
