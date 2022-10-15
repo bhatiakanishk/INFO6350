@@ -4,37 +4,6 @@
 //
 //  Created by Kanishk Bhatia on 10/13/22.
 //
-/* Develop a command line Swift program to create a simple version of an agile software management.
- A.    Account should have:
- •    role: Enumeration of TeamLeader / TeamMember.
- •    id: Int
- •    username: String.
- •    password: String.
- •    displayName: String.
- B.    Task has the following properties:
- •    description: String.
- •    status: Enumeration of TODO/DOING/DONE.
- •    id: Int.
- •    assignedMember: Whatever type you select.
- C.    Team leader should be able to:
- •    Create Task.
- •    Update Task (update property: description & assignedMember).
- •    View Tasks.
- •    Delete Task.
- D.    Team member should be able to:
- •    View Tasks that are assigned to him.
- •    Update Task (update property: status).
- Constraints:
- •    Feel free to add any other properties
- •    When a member has >= 2 DOING tasks, this member should not be assigned new tasks.
- •    When a task is in DOING status, it should not be deleted or assigned to a new member.
- •    When a task is in DONE status, it should not be assigned to a new member.
- •    All inputs and outputs are from and to the console. No graphical user interface is required/needed.
- •    It will be Menu driven program, please give the user some options to move to the next step or to go back.
- •    The purpose of this assignment is to practice Swift constructs (classes, instances, properties, etc…). The evaluation of your solution will take this into consideration.
- •    You can create an extension to the String type to add a method to read from standard input (i.e. console). You can use the Swift standard library function: readLine() to read a string
- */
-
 import Foundation
 
 //Account class with role, id, username, password, displayName, onGoingTaskCount
@@ -99,10 +68,10 @@ class TeamLeader: Account {
     
     //Function to create a task
     func createTask() {
-        print("Enter the account ID:")
+        print("\nEnter the account ID:")
         //Set 0 as the default if Int input is empty
         let accountID = Int(readLine() ?? "0") ?? 0
-        print("Enter the task description:")
+        print("\nEnter the task description:")
         //Set an empty String as the default if input is empty
         let taskDescription = readLine() ?? ""
         //Append the new task to the tasks array with the description, id, and assignedMemeber
@@ -111,10 +80,10 @@ class TeamLeader: Account {
     
     //Function to update a task description
     func updateDescTask(){
-        print("Enter the task ID:")
+        print("\nEnter the task ID:")
         //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter the new description: ")
+        print("\nEnter the new description: ")
         let updateDescription = readLine()
         //$0 is the first parameter passed
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
@@ -124,10 +93,10 @@ class TeamLeader: Account {
     
     //Function to update the assigned member
     func updateMemberTask(){
-        print("Enter the task ID:")
+        print("\nEnter the task ID:")
         //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter the new member ID:")
+        print("\nEnter the new member ID:")
         //Set a 0 String as the default if input is empty
         let memberId = Int(readLine() ?? "0")
         //$0 is the first parameter passed
@@ -154,7 +123,7 @@ class TeamLeader: Account {
     
     //Function to delete a task
     func deleteTask(){
-        print("Enter the task ID:")
+        print("\nEnter the task ID:")
         //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
         //$0 is the first parameter passed
@@ -203,10 +172,10 @@ class TeamMember: Account {
     
     //Function to update the task status
     func updateTaskStatus() {
-        print("Enter the task ID:")
+        print("\nEnter the task ID:")
         //Set a 0 String as the default if input is empty
         let taskID = Int(readLine() ?? "0")
-        print("Enter the status of the task: \n1. Todo \n2. Doing \n3. Done\n")
+        print("\nEnter the status of the task: \n1. Todo \n2. Doing \n3. Done\n")
         //Set Int 1 as the default if input is empty
         let status = Int(readLine() ?? "0") ?? 1
         if let taskIndex = tasks.firstIndex(where: {$0.id == taskID}) {
@@ -249,7 +218,7 @@ class Task: CustomStringConvertible {
     }
     
     var description: String {
-        return "ID: \(id) \nDescription: \(desc) \nMember: \(assignedMember) \nStatus: \(status)"
+        return "Task ID: \(id) \nDescription: \(desc) \nMember: \(assignedMember) \nStatus: \(status)"
     }
 }
 
@@ -294,8 +263,7 @@ func loginMenu(){
      } else {
      // user name does not exist
      }*/
-    
-    
+        
     if let account = accounts.first(where: { $0.username == userName }) {
         //We have the account here
         if account.password == password {
@@ -305,11 +273,11 @@ func loginMenu(){
             }
         } else {
             //Invalid password
-            print("Invalid Password")
+            print("Invalid Password\n")
         }
     } else {
         //Username does not exist
-        print("Username does not exist")
+        print("Username does not exist\n")
     }
 }
 
