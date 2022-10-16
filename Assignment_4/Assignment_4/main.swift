@@ -43,7 +43,9 @@ class TeamLeader: Account {
     }
     //Override function for teamLeader menu
     override func printMenu() {
-        print("\nEnter an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Logout \n7. Exit\n")
+        print("\nTeam Leader Account")
+        print("---------------------")
+        print("Select an option: \n1. Create Task \n2. Update Description \n3. Update Assigned Member \n4. View Tasks \n5. Delete Task \n6. Logout \n7. Exit\n")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -61,7 +63,7 @@ class TeamLeader: Account {
         case 7:
             exit(0)
         default:
-            print("Invalid input\n")
+            print("Invalid input")
             print("Please select an option between 1 and 7\n")
         }
     }
@@ -149,7 +151,10 @@ class TeamMember: Account {
     }
     //Override function for teamMember menu
     override func printMenu() {
-        print("\nEnter an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
+        print("\nTeam Menu Account")
+        print("---------------------")
+        print("\nSelect an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
+        print("\nSelect an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
@@ -224,7 +229,6 @@ class Task: CustomStringConvertible {
 
 //Empty account array
 var accounts: [Account] = []
-
 //Empty task array
 var tasks: [Task] = []
 var taskCount = 0
@@ -237,7 +241,7 @@ func generateTaskId() -> Int {
 
 //HashMap attempt
 /*var accounts: [String: Account] = [:]
- accounts["gaurav"] = Account(role: .teamLeader, id: 10, username: "gaurav", password: "noob", displayName: "Gaurav")*/
+ accounts["gaurav"] = Account(role: .teamLeader, id: 10, username: "kanishk", password: "kanishk", displayName: "Kanishk")*/
 
 //Appending teamLeaders and teamMembers to the accounts array
 accounts.append(TeamLeader(id: 10, username: "gaurav", password: "gaurav", displayName: "Gaurav"))
@@ -274,10 +278,14 @@ func loginMenu(){
         } else {
             //Invalid password
             print("Invalid Password\n")
+            //Call login menu again
+            loginMenu()
         }
     } else {
         //Username does not exist
         print("Username does not exist\n")
+        //Call login menu again
+        loginMenu()
     }
 }
 
