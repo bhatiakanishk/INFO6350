@@ -45,6 +45,7 @@ class Location {
         let zipCode = readLine() ?? ""
         
         locations.append(Location(id: locationId, street: streetName, city: cityName, state: stateName, country: countryName, zip: zipCode))
+        print("Location created successfully")
     }
     
     func viewAllLocations() {
@@ -77,6 +78,7 @@ class Location {
             locations[locationIndex].country = countryName
             locations[locationIndex].zip = zipCode
         }
+        print("Location updated successfully")
     }
     
     func deleteLocation() {
@@ -87,19 +89,17 @@ class Location {
             locations.remove(at: locationIndex)
             print("Location deleted successfully")
         } else {
-            print("Enter valid id: ")
+            print("Location delete failed")
         }
-        
-        
     }
 }
 
 class Item {
     let id: Int
-    let name: String
-    let description: String
-    let weight: Int
-    let value: Int
+    var name: String
+    var description: String
+    var weight: Int
+    var value: Int
     
     init(id: Int, name: String, description: String, weight: Int, value: Int) {
         self.id = id
@@ -110,15 +110,64 @@ class Item {
     }
     
     func createItem() {
+        print("Enter item id: ")
+        let itemId = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter item name: ")
+        let itemName = readLine() ?? ""
+        
+        print("Enter item description: ")
+        let itemDesc = readLine() ?? ""
+        
+        print("Enter item weight: ")
+        let itemWeight = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter item value: ")
+        let itemValue = Int(readLine() ?? "0") ?? 0
+        
+        items.append(Item(id: itemId, name: itemName, description: itemDesc, weight: itemWeight, value: itemValue))
+        print("Item created successfully")
     }
     
     func viewAllItems() {
+        print(items)
     }
     
     func updateItem() {
+        print("Enter item id: ")
+        let itemId = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter new item name: ")
+        let itemName = readLine() ?? ""
+        
+        print("Enter new item description: ")
+        let itemDesc = readLine() ?? ""
+        
+        print("Enter new item weight: ")
+        let itemWeight = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter new item value: ")
+        let itemValue = Int(readLine() ?? "0") ?? 0
+        
+        if let itemIndex = items.firstIndex(where: {$0.id == itemId}) {
+            items[itemIndex].name = itemName
+            items[itemIndex].description = itemDesc
+            items[itemIndex].weight = itemWeight
+            items[itemIndex].value = itemValue
+        }
+        print("Item updated successfully")
     }
     
     func deleteItem() {
+        print("Enter item id: ")
+        let itemId = Int(readLine() ?? "0") ?? 0
+        
+        if let itemIndex = locations.firstIndex(where: {$0.id == itemId}) {
+            locations.remove(at: itemIndex)
+            print("Item deleted successfully")
+        } else {
+            print("Item delete failed")
+        }
     }
 }
 
