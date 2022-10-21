@@ -4,7 +4,6 @@
 //
 //  Created by Kanishk Bhatia on 10/21/22.
 //
-//cmd line
 
 import Foundation
 
@@ -23,6 +22,29 @@ class Location {
         self.state = state
         self.country = country
         self.zip = zip
+    }
+    
+    func locationMenu() {
+        print("\nLocation Menu")
+        print("------------------")
+        print("Select an option: \n1. Create Location \n2. View all Locations \n3. Update Location \n4. Delete Location \n5. Back \n6. Exit")
+        let menuOption = Int(readLine() ?? "")
+        switch menuOption {
+        case 1:
+            createLocation()
+        case 2:
+            viewAllLocations()
+        case 3:
+            updateLocation()
+        case 4:
+            deleteLocation()
+        case 5:
+            mainMenu()
+        case 6:
+            exit(0)
+        default:
+            print("Invalid input")
+        }
     }
     
     func createLocation() {
@@ -72,7 +94,7 @@ class Location {
         let zipCode = readLine() ?? ""
         
         if let locationIndex = locations.firstIndex(where: {$0.id == locationId}) {
-            locations[locationIndex].street = stateName
+            locations[locationIndex].street = streetName
             locations[locationIndex].city = cityName
             locations[locationIndex].state = stateName
             locations[locationIndex].country = countryName
@@ -107,6 +129,30 @@ class Item {
         self.description = description
         self.weight = weight
         self.value = value
+    }
+    
+    func itemMenu() {
+        print("\nItem Menu")
+        print("------------------")
+        print("Select an option: \n1. Create Item \n2. View all Items \n3. Update Item \n4. Delete Item \n5. Back \n6. Exit")
+        let menuOption = Int(readLine() ?? "")
+        switch menuOption {
+        case 1:
+            createItem()
+        case 2:
+            viewAllItems()
+        case 3:
+            updateItem()
+        case 4:
+            deleteItem()
+        case 5:
+            mainMenu()
+        case 6:
+            exit(0)
+        default:
+            print("Invalid input")
+        }
+        
     }
     
     func createItem() {
@@ -218,18 +264,27 @@ items.append(Item(id: 11, name: "Sony Headphones", description: "Headphones", we
 
 
 
-func menu() {
-    print("Main Menu")
+func mainMenu() {
+    print("\nMain Menu")
     print("------------------------")
     print("Please select an option:")
-    print("1. Item \n2. Location \n3. Logistic Order \n4. Search")
+    print("1. Item \n2. Location \n3. Logistic Order \n4. Search \n5. Exit")
     let option = Int(readLine() ?? "")
-//    switch option {
-//        case 1:
-//
-//        default:
-//            print("Invalid")
-//    }
+    switch option {
+        case 1:
+            mainMenu()
+        case 2:
+            mainMenu()
+        case 3:
+            mainMenu()
+        case 4:
+            mainMenu()
+        case 5:
+            exit(0)
+        default:
+            print("Invalid input")
+            mainMenu()
+    }
 }
 
-menu()
+mainMenu()
