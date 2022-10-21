@@ -104,3 +104,12 @@ class LogisticsOrder {
 var locations: [Location] = []
 var items: [Item] = []
 var logisticsOrder = [Int:String]()
+
+func menu() {
+    print("Main Menu")
+    print("------------------------")
+    print("Please select an option:")
+    print("1. Item \n2. Location \n3. Logistic Order")
+}
+
+menu()
