@@ -100,3 +100,7 @@ class LogisticsOrder {
     func deleteOrder() {
     }
 }
+
+var locations: [Location] = []
+var items: [Item] = []
+var logisticsOrder = [Int:String]()
