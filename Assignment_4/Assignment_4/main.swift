@@ -154,7 +154,6 @@ class TeamMember: Account {
         print("\nTeam Menu Account")
         print("---------------------")
         print("\nSelect an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
-        print("\nSelect an option: \n1. View Task \n2. Update Task Status \n3. Logout \n4. Exit\n")
         let printOption = Int(readLine() ?? "")
         switch printOption {
         case 1:
