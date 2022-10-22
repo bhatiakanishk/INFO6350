@@ -224,7 +224,7 @@ class LogisticsOrder {
     let estimatedArrivalDate: String
     var departureDate: String
     let cost: Int
-    let itemsCarried: Int
+    var itemsCarried: Int
     
     init(id: Int, fromLocation: String, toLocation: String, estimatedArrivalDate: String, departureDate: String, cost: Int, itemsCarried: Int) {
         self.id = id
@@ -298,6 +298,28 @@ class LogisticsOrder {
             print("Order deleted successfully")
         } else {
             print("Order delete failed")
+        }
+    }
+    
+    func searchByDate() {
+        print("Enter the departure date: ")
+        let orderDate = readLine() ?? ""
+        
+        if logisticsOrder.contains(where: {$0.departureDate == orderDate}) {
+            print("Order found")
+        } else {
+            print("Order not found")
+        }
+    }
+    
+    func searchByLocation() {
+        print("Enter the to location: ")
+        let toLocation = readLine() ?? ""
+        
+        if logisticsOrder.contains(where: {$0.toLocation == toLocation}) {
+            print("Order found")
+        } else {
+            print("Order not found")
         }
     }
 }
