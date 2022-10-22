@@ -221,12 +221,12 @@ class LogisticsOrder {
     let id: Int
     let fromLocation: String
     let toLocation: String
-    let estimatedArrivalDate: Date
-    let departureDate: Date
+    let estimatedArrivalDate: String
+    var departureDate: String
     let cost: Int
     let itemsCarried: Int
     
-    init(id: Int, fromLocation: String, toLocation: String, estimatedArrivalDate: Date, departureDate: Date, cost: Int, itemsCarried: Int) {
+    init(id: Int, fromLocation: String, toLocation: String, estimatedArrivalDate: String, departureDate: String, cost: Int, itemsCarried: Int) {
         self.id = id
         self.fromLocation = fromLocation
         self.toLocation = toLocation
@@ -237,24 +237,76 @@ class LogisticsOrder {
     }
     
     func createOrder() {
+        print("Enter order id: ")
+        let orderId = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter from location: ")
+        let fromLocation = readLine() ?? ""
+        
+        print("Enter to location: ")
+        let toLocation = readLine() ?? ""
+        
+        print("Enter arrival date: ")
+        let arrivalDate = readLine() ?? ""
+        
+        print("Enter departure date: ")
+        let departureDate = readLine() ?? ""
+        
+        print("Enter order cost: ")
+        let orderCost = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter items carried: ")
+        let itemsCarried = Int(readLine() ?? "0") ?? 0
+        
+        logisticsOrder.append(LogisticsOrder(id: orderId, fromLocation: fromLocation, toLocation: toLocation, estimatedArrivalDate: arrivalDate, departureDate: departureDate, cost: orderCost, itemsCarried: itemsCarried))
     }
     
     func viewAllOrders() {
+        print(logisticsOrder)
     }
     
     func updateDepartureDate() {
+        print("Enter order id: ")
+        let orderId = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter new departure date: ")
+        let departureDate = readLine() ?? ""
+        
+        if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
+            logisticsOrder[orderIndex].departureDate = departureDate
+        }
     }
     
     func updateItems() {
+        print("Enter order id: ")
+        let orderId = Int(readLine() ?? "0") ?? 0
+        
+        print("Enter new items carried: ")
+        let itemsCarried = Int(readLine() ?? "0") ?? 0
+        
+        if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
+            logisticsOrder[orderIndex].itemsCarried = itemsCarried
+        }
     }
     
     func deleteOrder() {
+        print("Enter order id: ")
+        let orderId = Int(readLine() ?? "0") ?? 0
+        
+        if let orderIndex = locations.firstIndex(where: {$0.id == orderId}) {
+            locations.remove(at: orderIndex)
+            print("Order deleted successfully")
+        } else {
+            print("Order delete failed")
+        }
     }
 }
 
 var locations: [Location] = []
 var items: [Item] = []
-var logisticsOrder: [Int: LogisticsOrder] = [1: LogisticsOrder(id: 1, fromLocation: "Boston", toLocation: "New York", estimatedArrivalDate: "11-11-2021", departureDate: "10-10-2022", cost: 10, itemsCarried: 1)]
+var logisticsOrder: [LogisticsOrder] = []
+
+//var logisticsOrder: [Int: LogisticsOrder] = [1: LogisticsOrder(id: 1, fromLocation: "Boston", toLocation: "New York", estimatedArrivalDate: "11-11-2021", departureDate: "10-10-2022", cost: 10, itemsCarried: 1)]
 
 locations.append(Location(id: 1, street: "Smith St", city: "Boston", state: "Massachusetts", country: "United States", zip: "02120"))
 locations.append(Location(id: 2, street: "3rd St", city: "New York", state: "New York", country: "United States", zip: "10009"))
@@ -262,7 +314,7 @@ locations.append(Location(id: 2, street: "3rd St", city: "New York", state: "New
 items.append(Item(id: 10, name: "Xbox", description: "Gaming Console", weight: 2, value: 500))
 items.append(Item(id: 11, name: "Sony Headphones", description: "Headphones", weight: 1, value: 150))
 
-
+logisticsOrder.append(LogisticsOrder(id: 21, fromLocation: "Boston", toLocation: "New York", estimatedArrivalDate: "1st November 2022", departureDate: "30th October 2022", cost: 15, itemsCarried: 1))
 
 func mainMenu() {
     print("\nMain Menu")
