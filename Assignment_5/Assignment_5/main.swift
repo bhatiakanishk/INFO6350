@@ -254,7 +254,7 @@ class LogisticsOrder {
 
 var locations: [Location] = []
 var items: [Item] = []
-var logisticsOrder = [Int:String]()
+var logisticsOrder: [Int: LogisticsOrder] = [1: LogisticsOrder(id: 1, fromLocation: "Boston", toLocation: "New York", estimatedArrivalDate: "11-11-2021", departureDate: "10-10-2022", cost: 10, itemsCarried: 1)]
 
 locations.append(Location(id: 1, street: "Smith St", city: "Boston", state: "Massachusetts", country: "United States", zip: "02120"))
 locations.append(Location(id: 2, street: "3rd St", city: "New York", state: "New York", country: "United States", zip: "10009"))
