@@ -4,34 +4,6 @@
 //
 //  Created by Kanishk Bhatia on 10/21/22.
 //
-
-//The following operations need to be performed:
-//A.  LogisticsOrder:
-//• Create order
-//• Update departure date
-//• Update items
-//• View all orders
-//• Delete order
-//B.  Location:
-//• Create location
-//• View all locations
-//• Update location
-//• Delete location
-//C.  Item:
-//• Create item
-//• View all items
-//• Update item
-//• Delete item
-//D.  Search:
-//• Search order by date
-//• Search order by location
-//* The items in LogisticsOrder needs to have information about the number of
-//each item. You may consider using a dictionary.
-//* You may add more classes as you see fit.
-//* Add data validation wherever applicable.
-//* Outputs are displayed on the console. No need for a graphical UI.
-//* The next few assignments will be based on this one.
-
 import Foundation
 
 struct Location {
@@ -70,13 +42,29 @@ var locations: [Location] = []
 var items: [Item] = []
 var logisticsOrder: [LogisticsOrder] = []
 
-//var logisticsOrder: [Int: LogisticsOrder] = [1: LogisticsOrder(id: 1, fromLocation: "Boston", toLocation: "New York", estimatedArrivalDate: "11-11-2021", departureDate: "10-10-2022", cost: 10, itemsCarried: 1)]
+locations.append(Location(id: 1,
+                          street: "Smith St",
+                          city: "Boston",
+                          state: "Massachusetts",
+                          country: "United States",
+                          zip: "02120"))
+locations.append(Location(id: 2,
+                          street: "3rd St",
+                          city: "New York",
+                          state: "New York",
+                          country: "United States",
+                          zip: "10009"))
 
-locations.append(Location(id: 1, street: "Smith St", city: "Boston", state: "Massachusetts", country: "United States", zip: "02120"))
-locations.append(Location(id: 2, street: "3rd St", city: "New York", state: "New York", country: "United States", zip: "10009"))
-
-items.append(Item(id: 10, name: "Xbox", description: "Gaming Console", weight: 2, value: 500))
-items.append(Item(id: 11, name: "Sony Headphones", description: "Headphones", weight: 1, value: 150))
+items.append(Item(id: 10,
+                  name: "Xbox",
+                  description: "Gaming Console",
+                  weight: 2,
+                  value: 500))
+items.append(Item(id: 11,
+                  name: "Sony Headphones",
+                  description: "Headphones",
+                  weight: 1,
+                  value: 150))
 
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM-dd-yyyy"
@@ -86,32 +74,28 @@ logisticsOrder.append(LogisticsOrder(id: 21,
                                      estimatedArrivalDate: dateFormatter.date(from: "07-21-2023") ?? Date(),
                                      departureDate: dateFormatter.date(from: "09-21-2023") ?? Date(),
                                      cost: 15,
-                                     itemsCarried: 1))
+                                     itemsCarried: [OrderItem(item: Item(id: 10, name: "Xbox", description: "Gaming Console", weight: 2, value: 500), quantity: 1)]))
 
 func mainMenu() {
     print("\nMain Menu")
     print("------------------------")
     print("Please select an option:")
-    print("1. Item \n2. Location \n3. Logistic Order \n4. Search \n5. Exit")
-    let option = Int(readLine() ?? "")
-    switch option {
+    print("1. Item \n2. Location \n3. Logistic Order \n4. Exit")
+    let mainMenuOption = Int(readLine() ?? "")
+    switch mainMenuOption {
         case 1:
             itemMenu()
         case 2:
             locationMenu()
         case 3:
-            mainMenu()
+            logisticsOrderMenu()
         case 4:
-            mainMenu()
-        case 5:
             exit(0)
         default:
             print("Invalid input")
             mainMenu()
     }
 }
-
-
 
 mainMenu()
 
@@ -120,8 +104,8 @@ func locationMenu() {
     print("\nLocation Menu")
     print("------------------")
     print("Select an option: \n1. Create Location \n2. View all Locations \n3. Update Location \n4. Delete Location \n5. Back \n6. Exit")
-    let menuOption = Int(readLine() ?? "")
-    switch menuOption {
+    let locationMenuOption = Int(readLine() ?? "")
+    switch locationMenuOption {
     case 1:
         createLocation()
     case 2:
@@ -160,10 +144,12 @@ func createLocation() {
     
     locations.append(Location(id: locationId, street: streetName, city: cityName, state: stateName, country: countryName, zip: zipCode))
     print("Location created successfully")
+    locationMenu()
 }
 
 func viewAllLocations() {
     print(locations)
+    locationMenu()
 }
 
 func updateLocation() {
@@ -193,6 +179,7 @@ func updateLocation() {
         locations[locationIndex].zip = zipCode
     }
     print("Location updated successfully")
+    locationMenu()
 }
 
 func deleteLocation() {
@@ -202,8 +189,10 @@ func deleteLocation() {
     if let locationIndex = locations.firstIndex(where: {$0.id == locationId}) {
         locations.remove(at: locationIndex)
         print("Location deleted successfully")
+        locationMenu()
     } else {
         print("Location delete failed")
+        locationMenu()
     }
 }
 
@@ -213,8 +202,8 @@ func itemMenu() {
     print("\nItem Menu")
     print("------------------")
     print("Select an option: \n1. Create Item \n2. View all Items \n3. Update Item \n4. Delete Item \n5. Back \n6. Exit")
-    let menuOption = Int(readLine() ?? "")
-    switch menuOption {
+    let itemMenuOption = Int(readLine() ?? "")
+    switch itemMenuOption {
     case 1:
         createItem()
     case 2:
@@ -230,7 +219,6 @@ func itemMenu() {
     default:
         print("Invalid input")
     }
-    
 }
 
 func createItem() {
@@ -251,10 +239,12 @@ func createItem() {
     
     items.append(Item(id: itemId, name: itemName, description: itemDesc, weight: itemWeight, value: itemValue))
     print("Item created successfully")
+    itemMenu()
 }
 
 func viewAllItems() {
     print(items)
+    itemMenu()
 }
 
 func updateItem() {
@@ -278,23 +268,59 @@ func updateItem() {
         items[itemIndex].description = itemDesc
         items[itemIndex].weight = itemWeight
         items[itemIndex].value = itemValue
+        print("Item updated successfully")
+        itemMenu()
+    } else {
+        print("Item updated failed")
+        itemMenu()
     }
-    print("Item updated successfully")
 }
 
 func deleteItem() {
     print("Enter item id: ")
     let itemId = Int(readLine() ?? "0") ?? 0
     
-    if let itemIndex = locations.firstIndex(where: {$0.id == itemId}) {
-        locations.remove(at: itemIndex)
+    if let itemIndex = items.firstIndex(where: {$0.id == itemId}) {
+        items.remove(at: itemIndex)
         print("Item deleted successfully")
+        itemMenu()
     } else {
         print("Item delete failed")
+        itemMenu()
     }
 }
 
 // MARK: Logistics Order
+func logisticsOrderMenu() {
+    print("\nLogistics Order Menu")
+    print("------------------")
+    print("Select an option: \n1. Create order \n2. View all Orders \n3. Update Departure Date \n4. Update Items \n5. Delete Order \n6. Search by Date \n7. Search by location \n8. Back \n9. Exit")
+    let logisticOrderMenuOption = Int(readLine() ?? "")
+    switch logisticOrderMenuOption {
+    case 1:
+        createOrder()
+    case 2:
+        viewAllOrders()
+    case 3:
+        updateDepartureDate()
+    case 4:
+        updateItems()
+    case 5:
+        deleteOrder()
+    case 6:
+        searchByDate()
+    case 7:
+        searchByLocation()
+    case 8:
+        mainMenu()
+    case 9:
+        exit(0)
+    default:
+        print("Invalid input")
+    }
+}
+
+
 func createOrder() {
     print("Enter order id: ")
     let orderId = Int(readLine() ?? "0") ?? 0
@@ -314,21 +340,23 @@ func createOrder() {
     print("Enter items: ")
     var items: [OrderItem] = []
     while(true) {
-        print("enter item id:")
+        print("Enter item id: (Enter 99 to exit)")
+        let itemId = Int(readLine() ?? "0") ?? 0
+        print("Enter item quantity")
+        let quantity = Int(readLine() ?? "0") ?? 0
+//        items.append(OrderItem(item: Item(id: itemId,
+//                                          name: String,
+//                                          description: <#T##String#>,
+//                                          weight: <#T##Int#>,
+//                                          value: <#T##Int#>),
+//                               quantity: quantity))
         
-        print("enter item quantity")
-        
-        items.append(OrderItem(item: <#T##Item#>, quantity: <#T##Int#>))
-        
-        if readline() == "x" {
+        //items.append(OrderItem(item: <#Item#>, quantity: quantity))
+        if itemId == 99 {
             break
         }
     }
-    
-
     let orderCost = getOrderTotal(items: items)
- 
-    
     logisticsOrder.append(LogisticsOrder(id: orderId, fromLocation: fromLocation, toLocation: toLocation, estimatedArrivalDate: arrivalDate, departureDate: departureDate, cost: orderCost, itemsCarried: items))
 }
 
@@ -357,6 +385,7 @@ func getDateFromUser() -> Date {
 
 func viewAllOrders() {
     print(logisticsOrder)
+    logisticsOrderMenu()
 }
 
 func updateDepartureDate() {
@@ -368,6 +397,11 @@ func updateDepartureDate() {
     
     if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
         logisticsOrder[orderIndex].departureDate = departureDate
+        print("Departure date updated")
+        logisticsOrderMenu()
+    } else {
+        print("Departure date failed")
+        logisticsOrderMenu()
     }
 }
 
@@ -378,20 +412,27 @@ func updateItems() {
     print("Enter new items carried: ")
     let itemsCarried = Int(readLine() ?? "0") ?? 0
     
-    if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
-        logisticsOrder[orderIndex].itemsCarried = itemsCarried
-    }
+//    if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
+//        logisticsOrder[orderIndex].itemsCarried = [LogisticsOrder].[itemsCarried].[items]
+//        print("Order updated successfully")
+//        logisticsOrderMenu()
+//    } else {
+//        print("Order update failed")
+//        logisticsOrderMenu()
+//}
 }
 
 func deleteOrder() {
     print("Enter order id: ")
     let orderId = Int(readLine() ?? "0") ?? 0
     
-    if let orderIndex = locations.firstIndex(where: {$0.id == orderId}) {
-        locations.remove(at: orderIndex)
+    if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
+        logisticsOrder.remove(at: orderIndex)
         print("Order deleted successfully")
+        logisticsOrderMenu()
     } else {
         print("Order delete failed")
+        logisticsOrderMenu()
     }
 }
 
@@ -402,9 +443,11 @@ func searchByDate() {
     if orders.count > 0 {
         for order in orders {
             print(order)
+            logisticsOrderMenu()
         }
     } else {
-        print("order not found")
+        print("Order not found")
+        logisticsOrderMenu()
     }
 }
 
@@ -415,8 +458,10 @@ func searchByLocation() {
     if orders.count > 0 {
         for order in orders {
             print(order)
+            logisticsOrderMenu()
         }
     } else {
-            print("order not found")
+        print("Order not found")
+        logisticsOrderMenu()
     }
 }
