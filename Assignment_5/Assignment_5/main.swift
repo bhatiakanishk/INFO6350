@@ -50,7 +50,7 @@ struct LogisticsOrder {
     var itemsCarried: [OrderItem]
     
     func getDescription() -> String {
-        return "Task ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried) \n"
+        return "Location ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried) \n"
     }
 }
 
@@ -359,6 +359,7 @@ func logisticsOrderMenu() {
         exit(0)
     default:
         print("Invalid input")
+        logisticsOrderMenu()
     }
 }
 
