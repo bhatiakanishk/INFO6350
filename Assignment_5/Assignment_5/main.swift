@@ -60,6 +60,9 @@ items.append(Item(id: 10,
                   description: "Gaming Console",
                   weight: 2,
                   value: 500))
+
+print(items.first(where: {$0.id == 10}) ?? 0)
+
 items.append(Item(id: 11,
                   name: "Sony Headphones",
                   description: "Headphones",
@@ -338,26 +341,25 @@ func createOrder() {
     let departureDate = getDateFromUser()
     
     print("Enter items: ")
-    var items: [OrderItem] = []
+    var items2: [OrderItem] = []
     while(true) {
+        
         print("Enter item id: (Enter 99 to exit)")
         let itemId = Int(readLine() ?? "0") ?? 0
-        print("Enter item quantity")
-        let quantity = Int(readLine() ?? "0") ?? 0
-//        items.append(OrderItem(item: Item(id: itemId,
-//                                          name: String,
-//                                          description: <#T##String#>,
-//                                          weight: <#T##Int#>,
-//                                          value: <#T##Int#>),
-//                               quantity: quantity))
-        
-        //items.append(OrderItem(item: <#Item#>, quantity: quantity))
         if itemId == 99 {
             break
+        } else {
+            print("Enter item quantity")
+            let quantity = Int(readLine() ?? "0") ?? 0
+            
+            guard let itemIndex = items.first(where: {$0.id == itemId}) else { return }
+            items2.append(OrderItem(item: itemIndex, quantity: quantity))
         }
     }
-    let orderCost = getOrderTotal(items: items)
-    logisticsOrder.append(LogisticsOrder(id: orderId, fromLocation: fromLocation, toLocation: toLocation, estimatedArrivalDate: arrivalDate, departureDate: departureDate, cost: orderCost, itemsCarried: items))
+    let orderCost = getOrderTotal(items: items2)
+    logisticsOrder.append(LogisticsOrder(id: orderId, fromLocation: fromLocation, toLocation: toLocation, estimatedArrivalDate: arrivalDate, departureDate: departureDate, cost: orderCost, itemsCarried: items2))
+    print(logisticsOrder)
+    logisticsOrderMenu()
 }
 
 func getOrderTotal(items: [OrderItem]) -> Int {
@@ -384,7 +386,11 @@ func getDateFromUser() -> Date {
 
 
 func viewAllOrders() {
-    print(logisticsOrder)
+    //print(logisticsOrder.forEach())
+    logisticsOrder.forEach() { print($0) }
+    for element in logisticsOrder {
+        print(element)
+    }
     logisticsOrderMenu()
 }
 
@@ -412,14 +418,14 @@ func updateItems() {
     print("Enter new items carried: ")
     let itemsCarried = Int(readLine() ?? "0") ?? 0
     
-//    if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
-//        logisticsOrder[orderIndex].itemsCarried = [LogisticsOrder].[itemsCarried].[items]
-//        print("Order updated successfully")
-//        logisticsOrderMenu()
-//    } else {
-//        print("Order update failed")
-//        logisticsOrderMenu()
-//}
+    if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
+        //logisticsOrder[orderIndex].itemsCarried =
+        print("Order updated successfully")
+        logisticsOrderMenu()
+    } else {
+        print("Order update failed")
+        logisticsOrderMenu()
+}
 }
 
 func deleteOrder() {
