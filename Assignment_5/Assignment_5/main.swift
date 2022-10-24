@@ -14,8 +14,10 @@ struct Location {
     var country: String
     var zip: String
     
-    var description: String {
-        return "Location ID: \(id) \nStreet: \(street) \nCity: \(city) \nState: \(state) \nCountry: \(country) \nZip: \(zip)"
+    func getDescription() -> String {
+        return "Location ID: \(id) \nStreet: \(street) \nCity: \(city) \nState: \(state) \nCountry: \(country) \nZip Code: \(zip) \n"
+//    var description: String {
+//        return "Location ID: \(id) \nStreet: \(street) \nCity: \(city) \nState: \(state) \nCountry: \(country) \nZip: \(zip)"
     }
 }
 
@@ -26,8 +28,10 @@ struct Item {
     var weight: Int
     var value: Int
     
-    var description: String {
-        return "Item ID: \(id) \nName: \(name) \nDescription: \(desc) \nWeight: \(weight) \nValue: \(value)"
+    func getDescription() -> String {
+        return "Item ID: \(id) \nName: \(name) \nDescription: \(desc) \nWeight: \(weight) \nValue: \(value) \n"
+//    var description: String {
+//        return "Item ID: \(id) \nName: \(name) \nDescription: \(desc) \nWeight: \(weight) \nValue: \(value)"
     }
 }
 
@@ -46,7 +50,7 @@ struct LogisticsOrder {
     var itemsCarried: [OrderItem]
     
     func getDescription() -> String {
-        return "Task ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried)"
+        return "Task ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried) \n"
     }
 //    var description: String {
 //        return "Task ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried)"
@@ -164,7 +168,9 @@ func createLocation() {
 }
 
 func viewAllLocations() {
-    print(locations)
+    for location in locations {
+        print(location.getDescription())
+    }
     locationMenu()
 }
 
@@ -259,7 +265,10 @@ func createItem() {
 }
 
 func viewAllItems() {
-    print(items)
+    for item in items {
+        print(item.getDescription())
+    }
+    //print(items)
     itemMenu()
 }
 
