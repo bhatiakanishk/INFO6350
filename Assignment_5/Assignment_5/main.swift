@@ -38,8 +38,8 @@ struct OrderItem {
 
 struct LogisticsOrder {
     let id: Int
-    let fromLocation: String
-    let toLocation: String
+    let fromLocation: Location
+    let toLocation: Location
     let estimatedArrivalDate: Date
     var departureDate: Date
     var cost: Int
@@ -48,28 +48,26 @@ struct LogisticsOrder {
     func getDescription() -> String {
         return "Task ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried)"
     }
-//    var description: String {
-//        return "Task ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried)"
-//    }
 }
 
 var locations: [Location] = []
 var items: [Item] = []
 var logisticsOrder: [LogisticsOrder] = []
 
-locations.append(Location(id: 1,
+let location1 = Location(id: 1,
                           street: "Smith St",
                           city: "Boston",
                           state: "Massachusetts",
                           country: "United States",
-                          zip: "02120"))
-locations.append(Location(id: 2,
-                          street: "3rd St",
-                          city: "New York",
-                          state: "New York",
-                          country: "United States",
-                          zip: "10009"))
-
+                          zip: "02120")
+let location2 = Location(id: 2,
+                         street: "3rd St",
+                         city: "New York",
+                         state: "New York",
+                         country: "United States",
+                         zip: "10009")
+locations.append(location1)
+locations.append(location2)
 items.append(Item(id: 10,
                   name: "Xbox",
                   desc: "Gaming Console",
@@ -85,8 +83,8 @@ items.append(Item(id: 11,
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM-dd-yyyy"
 logisticsOrder.append(LogisticsOrder(id: 21,
-                                     fromLocation: "Boston",
-                                     toLocation: "New York",
+                                     fromLocation: location1,
+                                     toLocation: location2,
                                      estimatedArrivalDate: dateFormatter.date(from: "07-21-2023") ?? Date(),
                                      departureDate: dateFormatter.date(from: "09-21-2023") ?? Date(),
                                      cost: 15,
@@ -342,16 +340,24 @@ func createOrder() {
     let orderId = Int(readLine() ?? "0") ?? 0
     
     print("Enter from location id: ")
-    let fromLocation = readLine() ?? ""
-//    if let fromLocationIndex = locations.firstIndex(where: {$0.id == fromLocationId}) {
-//        let fromLocation = locations[fromLocationIndex]
-//        print(fromLocation)
-//    } else {
-//        print("Invalid id")
-//    }
+    let fromLocationInt = Int(readLine() ?? "0") ?? 0
+    var fromLocation: Location?
+    var toLocation: Location?
+    if let fromLocationIndex = locations.firstIndex(where: {$0.id == fromLocationInt}) {
+        fromLocation = locations[fromLocationIndex]
+        print(fromLocation)
+    } else {
+        print("Invalid id")
+    }
     
     print("Enter to location id: ")
-    let toLocation = readLine() ?? ""
+    let toLocationInt = Int(readLine() ?? "0") ?? 0
+    if let toLocationIndex = locations.firstIndex(where: {$0.id == toLocationInt}) {
+        toLocation = locations[toLocationIndex]
+        print(toLocation)
+    } else {
+        print("Invalid id")
+    }
     
     print("Enter arrival date:(MM-dd-yyyy) ")
     let arrivalDate = getDateFromUser()
@@ -378,7 +384,7 @@ func createOrder() {
         }
     }
     let orderCost = getOrderTotal(items: orderItems)
-    logisticsOrder.append(LogisticsOrder(id: orderId, fromLocation: fromLocation, toLocation: toLocation, estimatedArrivalDate: arrivalDate, departureDate: departureDate, cost: orderCost, itemsCarried: orderItems))
+    logisticsOrder.append(LogisticsOrder(id: orderId, fromLocation: fromLocation!, toLocation: toLocation!, estimatedArrivalDate: arrivalDate, departureDate: departureDate, cost: orderCost, itemsCarried: orderItems))
     logisticsOrderMenu()
 }
 
@@ -497,8 +503,8 @@ func searchByDate() {
 
 func searchByLocation() {
     print("Enter the location: ")
-    let location = readLine() ?? ""
-    let orders = logisticsOrder.filter( {$0.toLocation == location || $0.fromLocation == location} )
+    let location = Int(readLine() ?? "0") ?? 0
+    let orders = logisticsOrder.filter( {$0.toLocation.id == location || $0.fromLocation.id == location} )
     if orders.count > 0 {
         for order in orders {
             print(order)
