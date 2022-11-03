@@ -6,6 +6,7 @@
 //
 import Foundation
 
+//Structure for Location
 struct Location {
     let id: Int
     var street: String
@@ -14,11 +15,12 @@ struct Location {
     var country: String
     var zip: String
     
-    var description: String {
-        return "Location ID: \(id) \nStreet: \(street) \nCity: \(city) \nState: \(state) \nCountry: \(country) \nZip: \(zip)"
+    func getDescription() -> String {
+        return "Location ID: \(id) \nStreet: \(street) \nCity: \(city) \nState: \(state) \nCountry: \(country) \nZip Code: \(zip) \n"
     }
 }
 
+//Structure for Item
 struct Item {
     let id: Int
     var name: String
@@ -26,16 +28,18 @@ struct Item {
     var weight: Int
     var value: Int
     
-    var description: String {
-        return "Item ID: \(id) \nName: \(name) \nDescription: \(desc) \nWeight: \(weight) \nValue: \(value)"
+    func getDescription() -> String {
+        return "Item ID: \(id) \nName: \(name) \nDescription: \(desc) \nWeight: \(weight) \nValue: \(value) \n"
     }
 }
 
+//Structure for Order Item
 struct OrderItem {
     var item: Item
     var quantity: Int
 }
 
+//Structure for Logistic Order
 struct LogisticsOrder {
     let id: Int
     let fromLocation: Location
@@ -46,19 +50,30 @@ struct LogisticsOrder {
     var itemsCarried: [OrderItem]
     
     func getDescription() -> String {
-        return "Task ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried)"
+        return "Location ID: \(id) \nFrom Location: \(fromLocation) \nTo Location: \(toLocation) \nEstimated Arrival Date: \(estimatedArrivalDate) \nDeparture Date: \(departureDate) \nCost: \(cost) \nItems Carried \(itemsCarried) \n"
     }
 }
 
+//Location array
 var locations: [Location] = []
+
+//Item array
 var items: [Item] = []
+
+//LogisticOrder array
 var logisticsOrder: [LogisticsOrder] = []
 
+<<<<<<< HEAD
 let location1 = Location(id: 1,
+=======
+//Location data
+locations.append(Location(id: 1,
+>>>>>>> d917238f9396a680d865ab6e89e9feaf3034c859
                           street: "Smith St",
                           city: "Boston",
                           state: "Massachusetts",
                           country: "United States",
+<<<<<<< HEAD
                           zip: "02120")
 let location2 = Location(id: 2,
                          street: "3rd St",
@@ -68,20 +83,33 @@ let location2 = Location(id: 2,
                          zip: "10009")
 locations.append(location1)
 locations.append(location2)
+=======
+                          zip: "02120"))
+locations.append(Location(id: 2,
+                          street: "3rd St",
+                          city: "New York",
+                          state: "New York",
+                          country: "United States",
+                          zip: "10009"))
+
+//Item data
+>>>>>>> d917238f9396a680d865ab6e89e9feaf3034c859
 items.append(Item(id: 10,
                   name: "Xbox",
                   desc: "Gaming Console",
                   weight: 2,
                   value: 500))
-
 items.append(Item(id: 11,
                   name: "Sony Headphones",
                   desc: "Headphones",
                   weight: 1,
                   value: 150))
 
+//Date formatting
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM-dd-yyyy"
+
+//Logistic Order data
 logisticsOrder.append(LogisticsOrder(id: 21,
                                      fromLocation: location1,
                                      toLocation: location2,
@@ -90,6 +118,7 @@ logisticsOrder.append(LogisticsOrder(id: 21,
                                      cost: 15,
                                      itemsCarried: [OrderItem(item: Item(id: 10, name: "Xbox", desc: "Gaming Console", weight: 2, value: 500), quantity: 1)]))
 
+//Main menu function
 func mainMenu() {
     print("\nMain Menu")
     print("------------------------")
@@ -114,6 +143,7 @@ func mainMenu() {
 mainMenu()
 
 // MARK: Location Methods
+//Location menu function
 func locationMenu() {
     print("\nLocation Menu")
     print("------------------")
@@ -137,6 +167,7 @@ func locationMenu() {
     }
 }
 
+//Create location function
 func createLocation() {
     print("Enter location id: ")
     let locationId = Int(readLine() ?? "0") ?? 0
@@ -161,11 +192,15 @@ func createLocation() {
     locationMenu()
 }
 
+//View all locations function
 func viewAllLocations() {
-    print(locations)
+    for location in locations {
+        print(location.getDescription())
+    }
     locationMenu()
 }
 
+//Update location function
 func updateLocation() {
     print("Enter location id: ")
     let locationId = Int(readLine() ?? "0") ?? 0
@@ -196,6 +231,7 @@ func updateLocation() {
     locationMenu()
 }
 
+//Delete location function
 func deleteLocation() {
     print("Enter location id: ")
     let locationId = Int(readLine() ?? "0") ?? 0
@@ -212,6 +248,7 @@ func deleteLocation() {
 
 
 // MARK: Item Functions
+//Item menu function
 func itemMenu() {
     print("\nItem Menu")
     print("------------------")
@@ -235,6 +272,7 @@ func itemMenu() {
     }
 }
 
+//Create item function
 func createItem() {
     print("Enter item id: ")
     let itemId = Int(readLine() ?? "0") ?? 0
@@ -256,11 +294,15 @@ func createItem() {
     itemMenu()
 }
 
+//View all items function
 func viewAllItems() {
-    print(items)
+    for item in items {
+        print(item.getDescription())
+    }
     itemMenu()
 }
 
+//Update item function
 func updateItem() {
     print("Enter item id: ")
     let itemId = Int(readLine() ?? "0") ?? 0
@@ -290,6 +332,7 @@ func updateItem() {
     }
 }
 
+//Delete item function
 func deleteItem() {
     print("Enter item id: ")
     let itemId = Int(readLine() ?? "0") ?? 0
@@ -305,6 +348,7 @@ func deleteItem() {
 }
 
 // MARK: Logistics Order
+//Logistic Order menu function
 func logisticsOrderMenu() {
     print("\nLogistics Order Menu")
     print("------------------")
@@ -331,10 +375,11 @@ func logisticsOrderMenu() {
         exit(0)
     default:
         print("Invalid input")
+        logisticsOrderMenu()
     }
 }
 
-
+//Create order function
 func createOrder() {
     print("Enter order id: ")
     let orderId = Int(readLine() ?? "0") ?? 0
@@ -388,6 +433,7 @@ func createOrder() {
     logisticsOrderMenu()
 }
 
+//Order total function
 func getOrderTotal(items: [OrderItem]) -> Int {
     var total = 0
     for item in items {
@@ -397,6 +443,7 @@ func getOrderTotal(items: [OrderItem]) -> Int {
     return total
 }
 
+//Get date from user function
 func getDateFromUser() -> Date {
     let date = readLine() ?? ""
      
@@ -410,7 +457,7 @@ func getDateFromUser() -> Date {
     }
 }
 
-
+//View all orders function
 func viewAllOrders() {
     for order in logisticsOrder {
         print(order.getDescription())
@@ -418,6 +465,7 @@ func viewAllOrders() {
     logisticsOrderMenu()
 }
 
+//Update departure date function
 func updateDepartureDate() {
     print("Enter order id: ")
     let orderId = Int(readLine() ?? "0") ?? 0
@@ -435,11 +483,10 @@ func updateDepartureDate() {
     }
 }
 
+//Update order item function
 func updateItems() {
     print("Enter order id: ")
     let orderId = Int(readLine() ?? "0") ?? 0
-//    print("Enter new items carried: ")
-//    let itemsCarried = Int(readLine() ?? "0") ?? 0
     
     if let orderIndex = logisticsOrder.firstIndex(where: {$0.id == orderId}) {
         //logisticsOrder[orderIndex].itemsCarried =
@@ -469,9 +516,10 @@ func updateItems() {
     } else {
         print("Order update failed")
         logisticsOrderMenu()
-}
+    }
 }
 
+//Delete order function
 func deleteOrder() {
     print("Enter order id: ")
     let orderId = Int(readLine() ?? "0") ?? 0
@@ -486,6 +534,7 @@ func deleteOrder() {
     }
 }
 
+//Search order by date function
 func searchByDate() {
     print("Enter the departure date: ")
     let orderDate = getDateFromUser()
@@ -501,6 +550,7 @@ func searchByDate() {
     }
 }
 
+//Search order by location function
 func searchByLocation() {
     print("Enter the location: ")
     let location = Int(readLine() ?? "0") ?? 0
