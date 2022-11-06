@@ -74,7 +74,6 @@
                     </buttonConfiguration>
                     <connections>
                         <action selector="btnUpdateTap:" destination="-1" eventType="touchUpInside" id="02X-am-kKG"/>
-                        <action selector="btnViewTap:" destination="-1" eventType="touchUpInside" id="c3I-gh-QiZ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="OO7-Ja-aW5">
