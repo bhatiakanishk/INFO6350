@@ -109,9 +109,9 @@
 				35D7AE9D29171CC900AF181B /* DeleteItemView.xib */,
 				35FC17F329157C7900A734AF /* ItemViewController.swift */,
 				35D7AE9329171B6000AF181B /* CreateItemViewController.swift */,
+				40DC64E429171EBA005152BC /* ViewItemViewController.swift */,
 				35D7AEA229177C6100AF181B /* UpdateItemViewController.swift */,
 				40DC64E029171EA5005152BC /* DeleteItemViewController.swift */,
-				40DC64E429171EBA005152BC /* ViewItemViewController.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
