@@ -26,7 +26,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3m6-Bn-lJ6">
-                    <rect key="frame" x="20" y="82" width="142" height="41"/>
+                    <rect key="frame" x="136" y="82" width="142" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -38,9 +38,12 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="btnCreateTap:" destination="-1" eventType="touchUpInside" id="NMc-3K-VH8"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Px0-K3-3b0">
-                    <rect key="frame" x="180" y="82" width="186" height="41"/>
+                    <rect key="frame" x="114" y="568" width="186" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -52,23 +55,12 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="IrN-GQ-Lgy">
-                    <rect key="frame" x="180" y="131" width="196" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Search by Location">
-                                <attributes>
-                                    <font key="NSFont" size="20" name="Helvetica"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </buttonConfiguration>
+                    <connections>
+                        <action selector="btnSearchDateTap:" destination="-1" eventType="touchUpInside" id="yYZ-yc-o9d"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ufZ-J2-HtO">
-                    <rect key="frame" x="180" y="180" width="232" height="41"/>
+                    <rect key="frame" x="91" y="432" width="232" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -80,9 +72,12 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="btnUpdateDepartureDateTap:" destination="-1" eventType="touchUpInside" id="mjB-gt-BaB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="cUq-iA-8Vr">
-                    <rect key="frame" x="20" y="229" width="143" height="41"/>
+                    <rect key="frame" x="135" y="219" width="143" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -94,9 +89,12 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="btnUpdateItemTap:" destination="-1" eventType="touchUpInside" id="kbP-cq-sjl"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DXU-Sv-gpN">
-                    <rect key="frame" x="20" y="131" width="142" height="41"/>
+                    <rect key="frame" x="136" y="148" width="142" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -108,9 +106,12 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="btnViewTap:" destination="-1" eventType="touchUpInside" id="KtA-Eh-BCA"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="k5N-dv-pWs">
-                    <rect key="frame" x="20" y="180" width="146" height="41"/>
+                    <rect key="frame" x="132" y="292" width="146" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -122,6 +123,9 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="btnDeleteTap:" destination="-1" eventType="touchUpInside" id="YjL-Ub-7Ug"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" id="bZf-uU-1eC">
                     <rect key="frame" x="161" y="648" width="92" height="37"/>
@@ -141,13 +145,8 @@
                         <action selector="onClose:" destination="-1" eventType="touchUpInside" id="487-2H-q4v"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDA-ff-tw8">
-                    <rect key="frame" x="20" y="278" width="374" height="362"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemGray2Color"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="52i-KA-5AX">
-                    <rect key="frame" x="180" y="229" width="143" height="41"/>
+                    <rect key="frame" x="136" y="363" width="143" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -159,6 +158,26 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="btnAddItemTap:" destination="-1" eventType="touchUpInside" id="S8w-BJ-aMm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="IrN-GQ-Lgy">
+                    <rect key="frame" x="109" y="496" width="196" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Search by Location">
+                                <attributes>
+                                    <font key="NSFont" size="20" name="Helvetica"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="btnSearchLocationTap:" destination="-1" eventType="touchUpInside" id="JYn-nj-VOW"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -169,9 +188,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -43,7 +43,6 @@
 		40DC64EC29171F90005152BC /* CreateOrder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DC64EA29171F90005152BC /* CreateOrder.xib */; };
 		40DC64EF29171FB0005152BC /* ViewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64ED29171FB0005152BC /* ViewOrderViewController.swift */; };
 		40DC64F029171FB0005152BC /* ViewOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DC64EE29171FB0005152BC /* ViewOrderViewController.xib */; };
-		40DC64F229171FB5005152BC /* DeleteOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64F129171FB5005152BC /* DeleteOrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +84,6 @@
 		40DC64EA29171F90005152BC /* CreateOrder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateOrder.xib; sourceTree = "<group>"; };
 		40DC64ED29171FB0005152BC /* ViewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOrderViewController.swift; sourceTree = "<group>"; };
 		40DC64EE29171FB0005152BC /* ViewOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewOrderViewController.xib; sourceTree = "<group>"; };
-		40DC64F129171FB5005152BC /* DeleteOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteOrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,12 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				35FC17FB291584C900A734AF /* LogisticOrderView.xib */,
-				35FC17FD2915850A00A734AF /* LogisticOrderViewController.swift */,
-				40DC64ED29171FB0005152BC /* ViewOrderViewController.swift */,
-				40DC64F129171FB5005152BC /* DeleteOrderViewController.swift */,
-				40DC64EE29171FB0005152BC /* ViewOrderViewController.xib */,
-				40DC64E929171F90005152BC /* CreateOrderViewController.swift */,
 				40DC64EA29171F90005152BC /* CreateOrder.xib */,
+				40DC64EE29171FB0005152BC /* ViewOrderViewController.xib */,
+				35FC17FD2915850A00A734AF /* LogisticOrderViewController.swift */,
+				40DC64E929171F90005152BC /* CreateOrderViewController.swift */,
+				40DC64ED29171FB0005152BC /* ViewOrderViewController.swift */,
 			);
 			path = LogisticOrder;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 				35FC18042915A5DC00A734AF /* Location.swift in Sources */,
 				35D7AE9429171B6000AF181B /* CreateItemViewController.swift in Sources */,
 				35FC18032915A5DC00A734AF /* Item.swift in Sources */,
-				40DC64F229171FB5005152BC /* DeleteOrderViewController.swift in Sources */,
 				35D7AEAE2918090400AF181B /* ViewLocationViewController.swift in Sources */,
 				40DC64E529171EBA005152BC /* ViewItemViewController.swift in Sources */,
 				35D7AEA329177C6100AF181B /* UpdateItemViewController.swift in Sources */,

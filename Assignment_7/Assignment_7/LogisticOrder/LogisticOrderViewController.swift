@@ -17,6 +17,31 @@ class LogisticOrderViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func btnCreateTap(_ sender: Any) {
+    }
+    
+    @IBAction func btnViewTap(_ sender: Any) {
+    }
+    
+    @IBAction func btnUpdateItemTap(_ sender: Any) {
+    }
+    
+    @IBAction func btnDeleteTap(_ sender: Any) {
+    }
+    
+    @IBAction func btnAddItemTap(_ sender: Any) {
+    }
+    
+    @IBAction func btnUpdateDepartureDateTap(_ sender: Any) {
+    }
+    
+    @IBAction func btnSearchLocationTap(_ sender: Any) {
+    }
+    
+    @IBAction func btnSearchDateTap(_ sender: Any) {
+    }
+    
+    
     @IBAction func onClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
