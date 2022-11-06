@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onLogisticOrderButtonClicked(_ sender: UIButton) {
-        let vc = LogisticOrderViewController(nibName: "LogisticOrderView", bundle: nil)
+        let vc = OrderViewController(nibName: "OrderView", bundle: nil)
         vc.mainVC = self
         self.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
