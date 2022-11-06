@@ -16,8 +16,38 @@ class LocationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onClose(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func btnCreateTap(_ sender: Any) {
+        let vc = CreateLocationViewController(nibName: "CreateLocationView", bundle: nil)
+        vc.mainVC = mainVC
+        self.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
-   
+    
+    @IBAction func btnViewTap(_ sender: Any) {
+        let vc = ViewLocationViewController(nibName: "ViewLocationView", bundle: nil)
+        vc.mainVC = mainVC
+        self.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func btnUpdateTap(_ sender: Any) {
+        let vc = UpdateLocationViewController(nibName: "UpdateLocationView", bundle: nil)
+        vc.mainVC = mainVC
+        self.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnDeleteTap(_ sender: Any) {
+        let vc = DeleteLocationViewController(nibName: "DeleteLocationView", bundle: nil)
+        vc.mainVC = mainVC
+        self.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func btnCloseTap(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
 }

@@ -13,6 +13,14 @@
 		35D7AE9E29171CC900AF181B /* DeleteItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AE9D29171CC900AF181B /* DeleteItemView.xib */; };
 		35D7AEA129177C3600AF181B /* UpdateItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AEA029177C3600AF181B /* UpdateItemView.xib */; };
 		35D7AEA329177C6100AF181B /* UpdateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7AEA229177C6100AF181B /* UpdateItemViewController.swift */; };
+		35D7AEA6291806E100AF181B /* CreateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7AEA4291806E100AF181B /* CreateLocationViewController.swift */; };
+		35D7AEA7291806E100AF181B /* CreateLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AEA5291806E100AF181B /* CreateLocationView.xib */; };
+		35D7AEAA2918087600AF181B /* UpdateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7AEA82918087600AF181B /* UpdateLocationViewController.swift */; };
+		35D7AEAB2918087600AF181B /* UpdateLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AEA92918087600AF181B /* UpdateLocationView.xib */; };
+		35D7AEAE2918090400AF181B /* ViewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7AEAC2918090400AF181B /* ViewLocationViewController.swift */; };
+		35D7AEAF2918090400AF181B /* ViewLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AEAD2918090400AF181B /* ViewLocationView.xib */; };
+		35D7AEB22918094C00AF181B /* DeleteLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7AEB02918094C00AF181B /* DeleteLocationViewController.swift */; };
+		35D7AEB32918094C00AF181B /* DeleteLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AEB12918094C00AF181B /* DeleteLocationView.xib */; };
 		35FC17DC29156F4300A734AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC17DB29156F4300A734AF /* AppDelegate.swift */; };
 		35FC17E029156F4300A734AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC17DF29156F4300A734AF /* ViewController.swift */; };
 		35FC17E329156F4300A734AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35FC17E129156F4300A734AF /* Main.storyboard */; };
@@ -45,6 +53,14 @@
 		35D7AE9D29171CC900AF181B /* DeleteItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteItemView.xib; sourceTree = "<group>"; };
 		35D7AEA029177C3600AF181B /* UpdateItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateItemView.xib; sourceTree = "<group>"; };
 		35D7AEA229177C6100AF181B /* UpdateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemViewController.swift; sourceTree = "<group>"; };
+		35D7AEA4291806E100AF181B /* CreateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLocationViewController.swift; sourceTree = "<group>"; };
+		35D7AEA5291806E100AF181B /* CreateLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateLocationView.xib; sourceTree = "<group>"; };
+		35D7AEA82918087600AF181B /* UpdateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationViewController.swift; sourceTree = "<group>"; };
+		35D7AEA92918087600AF181B /* UpdateLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateLocationView.xib; sourceTree = "<group>"; };
+		35D7AEAC2918090400AF181B /* ViewLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLocationViewController.swift; sourceTree = "<group>"; };
+		35D7AEAD2918090400AF181B /* ViewLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewLocationView.xib; sourceTree = "<group>"; };
+		35D7AEB02918094C00AF181B /* DeleteLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocationViewController.swift; sourceTree = "<group>"; };
+		35D7AEB12918094C00AF181B /* DeleteLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteLocationView.xib; sourceTree = "<group>"; };
 		35FC17D829156F4300A734AF /* Assignment_7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment_7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FC17DB29156F4300A734AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35FC17DF29156F4300A734AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +156,14 @@
 			children = (
 				35FC17F72915818C00A734AF /* LocationView.xib */,
 				35FC17F9291581B600A734AF /* LocationViewController.swift */,
+				35D7AEA5291806E100AF181B /* CreateLocationView.xib */,
+				35D7AEA4291806E100AF181B /* CreateLocationViewController.swift */,
+				35D7AEA92918087600AF181B /* UpdateLocationView.xib */,
+				35D7AEA82918087600AF181B /* UpdateLocationViewController.swift */,
+				35D7AEAD2918090400AF181B /* ViewLocationView.xib */,
+				35D7AEAC2918090400AF181B /* ViewLocationViewController.swift */,
+				35D7AEB12918094C00AF181B /* DeleteLocationView.xib */,
+				35D7AEB02918094C00AF181B /* DeleteLocationViewController.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -228,16 +252,20 @@
 			files = (
 				35FC17E829156F4400A734AF /* LaunchScreen.storyboard in Resources */,
 				35D7AEA129177C3600AF181B /* UpdateItemView.xib in Resources */,
+				35D7AEAF2918090400AF181B /* ViewLocationView.xib in Resources */,
 				40DC64EC29171F90005152BC /* CreateOrder.xib in Resources */,
 				35D7AE9829171C5400AF181B /* CreateItemView.xib in Resources */,
 				35FC17F82915818C00A734AF /* LocationView.xib in Resources */,
 				40DC64F029171FB0005152BC /* ViewOrderViewController.xib in Resources */,
+				35D7AEA7291806E100AF181B /* CreateLocationView.xib in Resources */,
 				35D7AE9A29171C8800AF181B /* ViewItemView.xib in Resources */,
 				35FC17E529156F4400A734AF /* Assets.xcassets in Resources */,
 				35FC17F629157D2500A734AF /* ItemView.xib in Resources */,
 				35FC17FC291584C900A734AF /* LogisticOrderView.xib in Resources */,
 				35FC17F029156FD400A734AF /* MainNib.xib in Resources */,
+				35D7AEAB2918087600AF181B /* UpdateLocationView.xib in Resources */,
 				35D7AE9E29171CC900AF181B /* DeleteItemView.xib in Resources */,
+				35D7AEB32918094C00AF181B /* DeleteLocationView.xib in Resources */,
 				35FC17E329156F4300A734AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,15 +277,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D7AEB22918094C00AF181B /* DeleteLocationViewController.swift in Sources */,
+				35D7AEAA2918087600AF181B /* UpdateLocationViewController.swift in Sources */,
 				35FC17FA291581B600A734AF /* LocationViewController.swift in Sources */,
 				40DC64E129171EA5005152BC /* DeleteItemViewController.swift in Sources */,
 				35FC17F229157B1B00A734AF /* MainViewController.swift in Sources */,
 				35FC17F429157C7900A734AF /* ItemViewController.swift in Sources */,
 				35FC17E029156F4300A734AF /* ViewController.swift in Sources */,
+				35D7AEA6291806E100AF181B /* CreateLocationViewController.swift in Sources */,
 				35FC18042915A5DC00A734AF /* Location.swift in Sources */,
 				35D7AE9429171B6000AF181B /* CreateItemViewController.swift in Sources */,
 				35FC18032915A5DC00A734AF /* Item.swift in Sources */,
 				40DC64F229171FB5005152BC /* DeleteOrderViewController.swift in Sources */,
+				35D7AEAE2918090400AF181B /* ViewLocationViewController.swift in Sources */,
 				40DC64E529171EBA005152BC /* ViewItemViewController.swift in Sources */,
 				35D7AEA329177C6100AF181B /* UpdateItemViewController.swift in Sources */,
 				40DC64EB29171F90005152BC /* CreateOrderViewController.swift in Sources */,
