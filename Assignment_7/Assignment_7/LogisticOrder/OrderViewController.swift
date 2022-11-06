@@ -1,5 +1,5 @@
 //
-//  DeleteOrderViewController.swift
+//  OrderViewController.swift
 //  Assignment_7
 //
 //  Created by Kanishk Bhatia on 11/6/22.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class DeleteOrderViewController: UIViewController {
-
-    var mainVC: MainViewController?
+class OrderViewController: UIViewController {
     
+    var mainVC: MainViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
