@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35167BFB291843B2001DE9B1 /* UpdateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167BF9291843B2001DE9B1 /* UpdateOrderViewController.swift */; };
+		35167BFC291843B2001DE9B1 /* UpdateOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35167BFA291843B2001DE9B1 /* UpdateOrderView.xib */; };
+		35167BFF291843F7001DE9B1 /* DeleteOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167BFD291843F7001DE9B1 /* DeleteOrderViewController.swift */; };
+		35167C00291843F7001DE9B1 /* DeleteOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35167BFE291843F7001DE9B1 /* DeleteOrderView.xib */; };
+		35167C032918443E001DE9B1 /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167C012918443E001DE9B1 /* AddItemsViewController.swift */; };
+		35167C042918443E001DE9B1 /* AddItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35167C022918443E001DE9B1 /* AddItemsView.xib */; };
+		35167C0B291844A6001DE9B1 /* UpdateDepartureDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167C09291844A6001DE9B1 /* UpdateDepartureDateViewController.swift */; };
+		35167C0C291844A6001DE9B1 /* UpdateDepartureDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35167C0A291844A6001DE9B1 /* UpdateDepartureDateView.xib */; };
+		35167C0F291844E2001DE9B1 /* SearchByLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167C0D291844E2001DE9B1 /* SearchByLocationViewController.swift */; };
+		35167C10291844E2001DE9B1 /* SearchByLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35167C0E291844E2001DE9B1 /* SearchByLocationView.xib */; };
+		35167C1329184513001DE9B1 /* SearchByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167C1129184513001DE9B1 /* SearchByDateViewController.swift */; };
+		35167C1429184513001DE9B1 /* SearchByDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35167C1229184513001DE9B1 /* SearchByDateView.xib */; };
 		35D7AE9429171B6000AF181B /* CreateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D7AE9329171B6000AF181B /* CreateItemViewController.swift */; };
 		35D7AE9829171C5400AF181B /* CreateItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AE9729171C5400AF181B /* CreateItemView.xib */; };
 		35D7AE9A29171C8800AF181B /* ViewItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35D7AE9929171C8800AF181B /* ViewItemView.xib */; };
@@ -42,10 +54,22 @@
 		40DC64EB29171F90005152BC /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64E929171F90005152BC /* CreateOrderViewController.swift */; };
 		40DC64EC29171F90005152BC /* CreateOrder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DC64EA29171F90005152BC /* CreateOrder.xib */; };
 		40DC64EF29171FB0005152BC /* ViewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64ED29171FB0005152BC /* ViewOrderViewController.swift */; };
-		40DC64F029171FB0005152BC /* ViewOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DC64EE29171FB0005152BC /* ViewOrderViewController.xib */; };
+		40DC64F029171FB0005152BC /* ViewOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DC64EE29171FB0005152BC /* ViewOrderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35167BF9291843B2001DE9B1 /* UpdateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOrderViewController.swift; sourceTree = "<group>"; };
+		35167BFA291843B2001DE9B1 /* UpdateOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateOrderView.xib; sourceTree = "<group>"; };
+		35167BFD291843F7001DE9B1 /* DeleteOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteOrderViewController.swift; sourceTree = "<group>"; };
+		35167BFE291843F7001DE9B1 /* DeleteOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteOrderView.xib; sourceTree = "<group>"; };
+		35167C012918443E001DE9B1 /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
+		35167C022918443E001DE9B1 /* AddItemsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemsView.xib; sourceTree = "<group>"; };
+		35167C09291844A6001DE9B1 /* UpdateDepartureDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDepartureDateViewController.swift; sourceTree = "<group>"; };
+		35167C0A291844A6001DE9B1 /* UpdateDepartureDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateDepartureDateView.xib; sourceTree = "<group>"; };
+		35167C0D291844E2001DE9B1 /* SearchByLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByLocationViewController.swift; sourceTree = "<group>"; };
+		35167C0E291844E2001DE9B1 /* SearchByLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByLocationView.xib; sourceTree = "<group>"; };
+		35167C1129184513001DE9B1 /* SearchByDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByDateViewController.swift; sourceTree = "<group>"; };
+		35167C1229184513001DE9B1 /* SearchByDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByDateView.xib; sourceTree = "<group>"; };
 		35D7AE9329171B6000AF181B /* CreateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemViewController.swift; sourceTree = "<group>"; };
 		35D7AE9729171C5400AF181B /* CreateItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateItemView.xib; sourceTree = "<group>"; };
 		35D7AE9929171C8800AF181B /* ViewItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewItemView.xib; sourceTree = "<group>"; };
@@ -83,7 +107,7 @@
 		40DC64E929171F90005152BC /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
 		40DC64EA29171F90005152BC /* CreateOrder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateOrder.xib; sourceTree = "<group>"; };
 		40DC64ED29171FB0005152BC /* ViewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOrderViewController.swift; sourceTree = "<group>"; };
-		40DC64EE29171FB0005152BC /* ViewOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewOrderViewController.xib; sourceTree = "<group>"; };
+		40DC64EE29171FB0005152BC /* ViewOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewOrderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,10 +195,22 @@
 			children = (
 				35FC17FB291584C900A734AF /* LogisticOrderView.xib */,
 				40DC64EA29171F90005152BC /* CreateOrder.xib */,
-				40DC64EE29171FB0005152BC /* ViewOrderViewController.xib */,
+				40DC64EE29171FB0005152BC /* ViewOrderView.xib */,
+				35167BFA291843B2001DE9B1 /* UpdateOrderView.xib */,
+				35167BFE291843F7001DE9B1 /* DeleteOrderView.xib */,
+				35167C022918443E001DE9B1 /* AddItemsView.xib */,
+				35167C0A291844A6001DE9B1 /* UpdateDepartureDateView.xib */,
+				35167C0E291844E2001DE9B1 /* SearchByLocationView.xib */,
+				35167C1229184513001DE9B1 /* SearchByDateView.xib */,
 				35FC17FD2915850A00A734AF /* LogisticOrderViewController.swift */,
 				40DC64E929171F90005152BC /* CreateOrderViewController.swift */,
 				40DC64ED29171FB0005152BC /* ViewOrderViewController.swift */,
+				35167BF9291843B2001DE9B1 /* UpdateOrderViewController.swift */,
+				35167BFD291843F7001DE9B1 /* DeleteOrderViewController.swift */,
+				35167C012918443E001DE9B1 /* AddItemsViewController.swift */,
+				35167C09291844A6001DE9B1 /* UpdateDepartureDateViewController.swift */,
+				35167C0D291844E2001DE9B1 /* SearchByLocationViewController.swift */,
+				35167C1129184513001DE9B1 /* SearchByDateViewController.swift */,
 			);
 			path = LogisticOrder;
 			sourceTree = "<group>";
@@ -251,18 +287,24 @@
 				35D7AEA129177C3600AF181B /* UpdateItemView.xib in Resources */,
 				35D7AEAF2918090400AF181B /* ViewLocationView.xib in Resources */,
 				40DC64EC29171F90005152BC /* CreateOrder.xib in Resources */,
+				35167C0C291844A6001DE9B1 /* UpdateDepartureDateView.xib in Resources */,
 				35D7AE9829171C5400AF181B /* CreateItemView.xib in Resources */,
 				35FC17F82915818C00A734AF /* LocationView.xib in Resources */,
-				40DC64F029171FB0005152BC /* ViewOrderViewController.xib in Resources */,
+				40DC64F029171FB0005152BC /* ViewOrderView.xib in Resources */,
 				35D7AEA7291806E100AF181B /* CreateLocationView.xib in Resources */,
 				35D7AE9A29171C8800AF181B /* ViewItemView.xib in Resources */,
+				35167C042918443E001DE9B1 /* AddItemsView.xib in Resources */,
+				35167C00291843F7001DE9B1 /* DeleteOrderView.xib in Resources */,
 				35FC17E529156F4400A734AF /* Assets.xcassets in Resources */,
 				35FC17F629157D2500A734AF /* ItemView.xib in Resources */,
 				35FC17FC291584C900A734AF /* LogisticOrderView.xib in Resources */,
 				35FC17F029156FD400A734AF /* MainNib.xib in Resources */,
+				35167C10291844E2001DE9B1 /* SearchByLocationView.xib in Resources */,
 				35D7AEAB2918087600AF181B /* UpdateLocationView.xib in Resources */,
+				35167C1429184513001DE9B1 /* SearchByDateView.xib in Resources */,
 				35D7AE9E29171CC900AF181B /* DeleteItemView.xib in Resources */,
 				35D7AEB32918094C00AF181B /* DeleteLocationView.xib in Resources */,
+				35167BFC291843B2001DE9B1 /* UpdateOrderView.xib in Resources */,
 				35FC17E329156F4300A734AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,25 +316,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35167C0F291844E2001DE9B1 /* SearchByLocationViewController.swift in Sources */,
 				35D7AEB22918094C00AF181B /* DeleteLocationViewController.swift in Sources */,
 				35D7AEAA2918087600AF181B /* UpdateLocationViewController.swift in Sources */,
 				35FC17FA291581B600A734AF /* LocationViewController.swift in Sources */,
+				35167C1329184513001DE9B1 /* SearchByDateViewController.swift in Sources */,
 				40DC64E129171EA5005152BC /* DeleteItemViewController.swift in Sources */,
 				35FC17F229157B1B00A734AF /* MainViewController.swift in Sources */,
 				35FC17F429157C7900A734AF /* ItemViewController.swift in Sources */,
 				35FC17E029156F4300A734AF /* ViewController.swift in Sources */,
 				35D7AEA6291806E100AF181B /* CreateLocationViewController.swift in Sources */,
+				35167C0B291844A6001DE9B1 /* UpdateDepartureDateViewController.swift in Sources */,
 				35FC18042915A5DC00A734AF /* Location.swift in Sources */,
 				35D7AE9429171B6000AF181B /* CreateItemViewController.swift in Sources */,
 				35FC18032915A5DC00A734AF /* Item.swift in Sources */,
 				35D7AEAE2918090400AF181B /* ViewLocationViewController.swift in Sources */,
+				35167BFB291843B2001DE9B1 /* UpdateOrderViewController.swift in Sources */,
 				40DC64E529171EBA005152BC /* ViewItemViewController.swift in Sources */,
 				35D7AEA329177C6100AF181B /* UpdateItemViewController.swift in Sources */,
 				40DC64EB29171F90005152BC /* CreateOrderViewController.swift in Sources */,
 				35FC18022915A5DC00A734AF /* LogisticsOrder.swift in Sources */,
+				35167BFF291843F7001DE9B1 /* DeleteOrderViewController.swift in Sources */,
 				35FC17DC29156F4300A734AF /* AppDelegate.swift in Sources */,
 				40DC64EF29171FB0005152BC /* ViewOrderViewController.swift in Sources */,
 				35FC17FE2915850A00A734AF /* LogisticOrderViewController.swift in Sources */,
+				35167C032918443E001DE9B1 /* AddItemsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
