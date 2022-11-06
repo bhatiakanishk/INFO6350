@@ -155,14 +155,14 @@
 			isa = PBXGroup;
 			children = (
 				35FC17F72915818C00A734AF /* LocationView.xib */,
-				35FC17F9291581B600A734AF /* LocationViewController.swift */,
 				35D7AEA5291806E100AF181B /* CreateLocationView.xib */,
-				35D7AEA4291806E100AF181B /* CreateLocationViewController.swift */,
-				35D7AEA92918087600AF181B /* UpdateLocationView.xib */,
-				35D7AEA82918087600AF181B /* UpdateLocationViewController.swift */,
 				35D7AEAD2918090400AF181B /* ViewLocationView.xib */,
-				35D7AEAC2918090400AF181B /* ViewLocationViewController.swift */,
+				35D7AEA92918087600AF181B /* UpdateLocationView.xib */,
 				35D7AEB12918094C00AF181B /* DeleteLocationView.xib */,
+				35FC17F9291581B600A734AF /* LocationViewController.swift */,
+				35D7AEA4291806E100AF181B /* CreateLocationViewController.swift */,
+				35D7AEAC2918090400AF181B /* ViewLocationViewController.swift */,
+				35D7AEA82918087600AF181B /* UpdateLocationViewController.swift */,
 				35D7AEB02918094C00AF181B /* DeleteLocationViewController.swift */,
 			);
 			path = Location;

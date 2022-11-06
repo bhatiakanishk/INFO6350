@@ -32,7 +32,6 @@ class UpdateItemViewController: UIViewController {
         }
         if let itemIndex = mainVC.items.firstIndex(where: {$0.id == itemId}) {
             itemFoundIndex = itemIndex
-            tfItemId.isEnabled = false
             let item = mainVC.items[itemIndex]
             tfItemName.text = item.name
             tfItemDescription.text = item.desc
