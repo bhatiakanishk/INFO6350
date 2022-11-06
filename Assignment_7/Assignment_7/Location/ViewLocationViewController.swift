@@ -8,24 +8,29 @@
 import UIKit
 
 class ViewLocationViewController: UIViewController {
-
+    
+    @IBOutlet weak var textView: UITextView!
     var mainVC: MainViewController?
+    var outputStr = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewLocation()
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func viewLocation() {
+        guard let mainVC = self.mainVC else { return }
+        for item in mainVC.locations {
+            outputStr.append(item.getDescription())
+            outputStr.append("\n")
+        }
+        textView.text = outputStr.isEmpty ? "No locations exist" : outputStr
     }
-    */
+    
+    @IBAction func btnCloseTap(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
 
 }
