@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,20 +11,83 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <window contentMode="scaleToFill" resizesToFullScreen="NO" id="yDW-8R-LoK">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+        <window contentMode="scaleToFill" resizesToFullScreen="NO" id="e63-Df-4za">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <viewLayoutGuide key="safeArea" id="2Dv-KG-fxW"/>
-            <point key="canvasLocation" x="-474" y="11"/>
+            <viewLayoutGuide key="safeArea" id="96d-Ct-Tu0"/>
+            <connections>
+                <outlet property="rootViewController" destination="UVF-sV-843" id="HdQ-XW-QWO"/>
+            </connections>
+            <point key="canvasLocation" x="-807" y="105"/>
         </window>
-        <viewController id="cvO-P4-TJ6">
-            <view key="view" contentMode="scaleToFill" id="wEj-Uv-05e">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+        <viewController id="UVF-sV-843" customClass="MainViewController" customModule="Assignment_7" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="Kvx-r2-LlD">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <viewLayoutGuide key="safeArea" id="G2e-Wl-K8A"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assignment 7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3u-ii-Urr">
+                        <rect key="frame" x="113" y="48" width="189" height="53"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uv0-ic-Rpi">
+                        <rect key="frame" x="155" y="348" width="104" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                            <attributedString key="attributedTitle">
+                                <fragment content="Location">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="onLocationButtonClicked:" destination="UVF-sV-843" eventType="touchUpInside" id="bho-Ij-EpS"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjR-D8-Eym">
+                        <rect key="frame" x="133" y="463" width="149" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                            <attributedString key="attributedTitle">
+                                <fragment content="Logistic Order">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="onLogisticOrderButtonClicked:" destination="UVF-sV-843" eventType="touchUpInside" id="fT4-55-z3B"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIm-VG-D4P">
+                        <rect key="frame" x="155" y="234" width="104" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                            <attributedString key="attributedTitle">
+                                <fragment content="Item">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="onItemButtonClicked:" destination="UVF-sV-843" eventType="touchUpInside" id="Hox-cy-h8m"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="7b3-da-Ax9"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             </view>
-            <point key="canvasLocation" x="343" y="11"/>
+            <point key="canvasLocation" x="63.768115942028992" y="103.53260869565219"/>
         </viewController>
     </objects>
     <resources>
