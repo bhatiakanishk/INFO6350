@@ -90,4 +90,7 @@ class UpdateDepartureDateViewController: UIViewController {
         }
         return total
     }
+    @IBAction func doneDate(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
 }

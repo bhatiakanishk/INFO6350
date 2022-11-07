@@ -128,7 +128,6 @@ class CreateOrderViewController: UIViewController {
 
     }
     
-    
     @IBAction func btnCloseTap(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -157,5 +156,33 @@ class CreateOrderViewController: UIViewController {
             total += val
         }
         return total
+    }
+    
+    @IBAction func doneId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneFromId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneToId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneArrival(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneDeparture(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneItemId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneQuantity(_ sender: UITextField) {
+        sender.resignFirstResponder()
     }
 }

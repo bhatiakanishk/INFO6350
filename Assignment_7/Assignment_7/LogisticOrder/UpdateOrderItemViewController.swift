@@ -100,4 +100,16 @@ class UpdateOrderItemViewController: UIViewController {
         }
         return total
     }
+    
+    @IBAction func doneOrderId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneItemId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneQuantity(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
 }

@@ -27,6 +27,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneOrderId:" destination="-1" eventType="primaryActionTriggered" id="Rji-YK-Iuf"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="E4D-J6-qCe">
                     <rect key="frame" x="20" y="141" width="65" height="33"/>
@@ -93,6 +96,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneItemId:" destination="-1" eventType="primaryActionTriggered" id="Fsl-b0-Pav"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item quantity" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" id="6ek-Sk-WAT">
                     <rect key="frame" x="20" y="270" width="374" height="34"/>
@@ -100,6 +106,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneQuantity:" destination="-1" eventType="primaryActionTriggered" id="srr-3R-HAT"/>
+                    </connections>
                 </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

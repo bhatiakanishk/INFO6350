@@ -41,6 +41,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneDate:" destination="-1" eventType="primaryActionTriggered" id="Kgc-8I-LfY"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" id="10x-sj-DEz">
                     <rect key="frame" x="161" y="638" width="92" height="37"/>
