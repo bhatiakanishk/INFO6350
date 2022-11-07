@@ -100,6 +100,9 @@ class CreateItemViewController: UIViewController {
         sender.resignFirstResponder()
     }
     
+    @IBAction func doneItem(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
     
 }
     

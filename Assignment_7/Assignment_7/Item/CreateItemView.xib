@@ -53,6 +53,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneItem:" destination="-1" eventType="primaryActionTriggered" id="ema-9x-rBG"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item weight" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="sB6-OF-ybm">
                     <rect key="frame" x="37" y="340" width="341" height="34"/>
