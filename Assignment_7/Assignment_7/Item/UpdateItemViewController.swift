@@ -62,12 +62,20 @@ class UpdateItemViewController: UIViewController {
         guard let itemWeight = Int(tfItemWeight.text ?? "0") else {
             self.showAlert(title: "Error", message: "Invalid weight")
             return
+        }; if itemWeight <= 0 {
+            showAlert(title: "Error", message: "Weight cannot be 0")
+            return
         }
         
         guard let itemValue = Int(tfItemValue.text ?? "0") else {
             self.showAlert(title: "Error", message: "Invalid value")
             return
+        }; if itemValue <= 0 {
+            showAlert(title: "Error", message: "Weight cannot be 0")
+            return
         }
+        
+        
         mainVC.items[itemFoundIndex].name = itemName
         mainVC.items[itemFoundIndex].desc = itemDesc
         mainVC.items[itemFoundIndex].weight = itemWeight
@@ -93,4 +101,25 @@ class UpdateItemViewController: UIViewController {
                                     cancelButtonTitle: "Okay")
         alertView.show()
     }
+    
+    @IBAction func doneId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func doneName(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneValue(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneWeight(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneDesc(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    
 }

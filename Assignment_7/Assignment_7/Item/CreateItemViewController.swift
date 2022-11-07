@@ -19,8 +19,15 @@ class CreateItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tfItemValue.keyboardType = .numberPad
-        tfItemWeight.keyboardType = .numberPad
+//        tfItemValue.keyboardType = .numberPad
+//        tfItemWeight.keyboardType = .numberPad
+//
+//        tfItemId.delegate = self
+//        tfItemName.delegate = self
+//        tfItemDescription.delegate = self
+//        tfItemWeight.delegate = self
+//        tfItemValue.delegate = self
+        
 
         // Do any additional setup after loading the view.
     }
@@ -55,10 +62,16 @@ class CreateItemViewController: UIViewController {
         guard let itemWeight = Int(tfItemWeight.text ?? "0") else {
             self.showAlert(title: "Error", message: "Invalid weight")
             return
+        }; if itemWeight <= 0 {
+            showAlert(title: "Error", message: "Weight cannot be 0")
+            return
         }
         
         guard let itemValue = Int(tfItemValue.text ?? "0") else {
             self.showAlert(title: "Error", message: "Invalid value")
+            return
+        }; if itemValue <= 0 {
+            showAlert(title: "Error", message: "Value cannot be 0")
             return
         }
         
@@ -78,4 +91,22 @@ class CreateItemViewController: UIViewController {
                                     cancelButtonTitle: "Okay")
         alertView.show()
     }
+    
+    @IBAction func doneId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func doneName(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
+    
 }
+    
+    
+    
+//extension CreateItemViewController: UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        return true
+//    }
+//}

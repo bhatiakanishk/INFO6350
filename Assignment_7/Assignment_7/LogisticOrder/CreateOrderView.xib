@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateOrderViewController" customModule="Assignment_7" customModuleProvider="target">
             <connections>
                 <outlet property="tfArrivalDate" destination="Bcl-2z-Bde" id="58q-fI-ihq"/>
-                <outlet property="tfDepartureDate" destination="3So-5F-8eL" id="Ak5-Mb-ojQ"/>
+                <outlet property="tfDepartureDate" destination="QPW-Qx-mrt" id="nbX-Sc-7oh"/>
                 <outlet property="tfFromLocationId" destination="8Ik-Uv-6RI" id="bns-lW-SOb"/>
                 <outlet property="tfItemId" destination="3So-5F-8eL" id="fBK-uW-D9n"/>
                 <outlet property="tfItemQuantity" destination="VJ8-oc-yPF" id="gfR-N8-jYL"/>

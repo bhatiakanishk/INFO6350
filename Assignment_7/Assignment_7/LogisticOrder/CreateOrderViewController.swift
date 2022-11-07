@@ -114,6 +114,9 @@ class CreateOrderViewController: UIViewController {
         guard let quantity = Int(tfItemQuantity.text ?? "0") else {
             self.showAlert(title: "Error", message: "Invalid Quantity")
             return
+        }; if quantity <= 0 {
+            showAlert(title: "Error", message: "Weight cannot be 0")
+            return
         }
         
         let orderItems = [OrderItem(item: item, quantity: quantity)]

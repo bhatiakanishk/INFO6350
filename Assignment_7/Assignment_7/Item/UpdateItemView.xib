@@ -36,6 +36,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
+                    <connections>
+                        <action selector="doneName:" destination="-1" eventType="primaryActionTriggered" id="H1H-Mc-fWx"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item value" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="eMU-AF-HI9">
                     <rect key="frame" x="36" y="266" width="341" height="34"/>
@@ -43,6 +46,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneValue:" destination="-1" eventType="primaryActionTriggered" id="txf-PT-Ve0"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item description" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="sX1-YG-Eey">
                     <rect key="frame" x="36" y="413" width="341" height="34"/>
@@ -50,6 +56,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneDesc:" destination="-1" eventType="primaryActionTriggered" id="rJJ-Gm-KmR"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item weight" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="YMW-jp-WHS">
                     <rect key="frame" x="36" y="342" width="341" height="34"/>
@@ -57,6 +66,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneWeight:" destination="-1" eventType="primaryActionTriggered" id="HNt-NH-HIp"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YrW-P9-Ssq">
                     <rect key="frame" x="165" y="504" width="83" height="35"/>
@@ -81,6 +93,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneId:" destination="-1" eventType="primaryActionTriggered" id="NyZ-bR-yqc"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOO-Pd-QeI">
                     <rect key="frame" x="40" y="127" width="65" height="33"/>
