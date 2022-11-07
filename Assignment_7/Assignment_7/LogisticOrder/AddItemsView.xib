@@ -8,10 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpdateDepartureDateViewController" customModule="Assignment_7" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddItemsViewController" customModule="Assignment_7" customModuleProvider="target">
             <connections>
-                <outlet property="tfDepartureDate" destination="NjM-Bh-efM" id="GoN-qr-yCC"/>
-                <outlet property="tfOrderId" destination="eCS-10-A7P" id="UbL-WT-m0U"/>
+                <outlet property="tfItemId" destination="yFr-rC-4y2" id="WIX-to-9iw"/>
+                <outlet property="tfItemQuantity" destination="04x-BZ-TzR" id="17E-hL-8pn"/>
+                <outlet property="tfOrderId" destination="thm-Ul-3fW" id="ziV-ah-bd0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,22 +21,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Departure Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="21X-DZ-lra">
-                    <rect key="frame" x="48" y="20" width="319" height="39"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZcN-9c-A4x">
+                    <rect key="frame" x="137" y="20" width="140" height="39"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter order id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="eCS-10-A7P">
-                    <rect key="frame" x="20" y="92" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter order id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="thm-Ul-3fW">
+                    <rect key="frame" x="20" y="82" width="374" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MxM-6Y-9sJ">
-                    <rect key="frame" x="20" y="152" width="65" height="33"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="OCO-ui-N3p">
+                    <rect key="frame" x="20" y="135" width="65" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="gray">
@@ -48,38 +49,25 @@
                         </attributedString>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="btnFetchTap:" destination="-1" eventType="touchUpInside" id="Yrn-1J-B3v"/>
+                        <action selector="btnFetchTap:" destination="-1" eventType="touchUpInside" id="Wwq-jD-4CO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WpM-4V-QN2">
-                    <rect key="frame" x="166" y="480" width="83" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonConfiguration key="configuration" style="tinted">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Update">
-                                <attributes>
-                                    <font key="NSFont" size="18" name="Helvetica"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="btnUpdateTap:" destination="-1" eventType="touchUpInside" id="Tcd-77-PUt"/>
-                    </connections>
-                </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter departure date (mm-dd-yyyy)" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="NjM-Bh-efM">
-                    <rect key="frame" x="20" y="228" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="yFr-rC-4y2">
+                    <rect key="frame" x="20" y="229" width="374" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                    <connections>
-                        <action selector="doneDate:" destination="-1" eventType="primaryActionTriggered" id="e7u-R6-AwA"/>
-                    </connections>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" id="iDW-GM-2gK">
-                    <rect key="frame" x="161" y="572" width="92" height="37"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item quantity" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="04x-BZ-TzR">
+                    <rect key="frame" x="20" y="297" width="374" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" id="Ulw-Zp-9q9">
+                    <rect key="frame" x="160" y="635" width="92" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="tintColor" systemColor="systemRedColor"/>
                     <buttonConfiguration key="configuration" style="tinted">
@@ -93,7 +81,25 @@
                         </attributedString>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="btnCloseTap:" destination="-1" eventType="touchUpInside" id="57G-0h-7LY"/>
+                        <action selector="btnCloseTap:" destination="-1" eventType="touchUpInside" id="5BS-zJ-weC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WYp-rJ-ndM">
+                    <rect key="frame" x="178" y="571" width="57" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Add">
+                                <attributes>
+                                    <font key="NSFont" size="18" name="Helvetica"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="btnAddTap:" destination="-1" eventType="touchUpInside" id="cWu-Bk-c0O"/>
                     </connections>
                 </button>
             </subviews>

@@ -162,6 +162,24 @@
                         <action selector="btnCloseTap:" destination="-1" eventType="touchUpInside" id="4Tv-7e-hNb"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Uff-Pq-BEa">
+                    <rect key="frame" x="122" y="521" width="170" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Add Items">
+                                <attributes>
+                                    <font key="NSFont" size="20" name="Helvetica"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="btnAddItems:" destination="-1" eventType="touchUpInside" id="sb6-f5-s89"/>
+                        <action selector="btnUpdateTap:" destination="-1" eventType="touchUpInside" id="TLb-Ld-V2z"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uv0-ic-Rpi">
-                        <rect key="frame" x="155" y="348" width="104" height="41"/>
+                        <rect key="frame" x="155" y="312" width="104" height="41"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                             <attributedString key="attributedTitle">
@@ -47,23 +46,6 @@
                         </buttonConfiguration>
                         <connections>
                             <action selector="onLocationButtonClicked:" destination="UVF-sV-843" eventType="touchUpInside" id="bho-Ij-EpS"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjR-D8-Eym">
-                        <rect key="frame" x="133" y="463" width="149" height="41"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                            <attributedString key="attributedTitle">
-                                <fragment content="Logistic Order">
-                                    <attributes>
-                                        <font key="NSFont" size="20" name="Helvetica"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="onLogisticOrderButtonClicked:" destination="UVF-sV-843" eventType="touchUpInside" id="fT4-55-z3B"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIm-VG-D4P">
@@ -81,6 +63,23 @@
                         </buttonConfiguration>
                         <connections>
                             <action selector="onItemButtonClicked:" destination="UVF-sV-843" eventType="touchUpInside" id="Hox-cy-h8m"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjR-D8-Eym">
+                        <rect key="frame" x="133" y="388" width="149" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                            <attributedString key="attributedTitle">
+                                <fragment content="Logistic Order">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="onLogisticOrderButtonClicked:" destination="UVF-sV-843" eventType="touchUpInside" id="fT4-55-z3B"/>
                         </connections>
                     </button>
                 </subviews>

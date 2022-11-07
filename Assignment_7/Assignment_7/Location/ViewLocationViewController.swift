@@ -2,7 +2,7 @@
 //  ViewLocationViewController.swift
 //  Assignment_7
 //
-//  Created by Raj Kalpesh Mehta on 11/6/22.
+//  Created by Kanishk Bhatia on 11/6/22.
 //
 
 import UIKit

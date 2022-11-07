@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350E044D291899C9007B9FB9 /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350E044B291899C9007B9FB9 /* AddItemsViewController.swift */; };
+		350E044E291899C9007B9FB9 /* AddItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350E044C291899C9007B9FB9 /* AddItemsView.xib */; };
 		35167C1B29185F2D001DE9B1 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167C1929185F2D001DE9B1 /* OrderViewController.swift */; };
 		35167C1C29185F2D001DE9B1 /* OrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35167C1A29185F2D001DE9B1 /* OrderView.xib */; };
 		35584CD6291863CD00860FD1 /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35584CD4291863CD00860FD1 /* CreateOrderViewController.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350E044B291899C9007B9FB9 /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
+		350E044C291899C9007B9FB9 /* AddItemsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemsView.xib; sourceTree = "<group>"; };
 		35167C1929185F2D001DE9B1 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		35167C1A29185F2D001DE9B1 /* OrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderView.xib; sourceTree = "<group>"; };
 		35584CD4291863CD00860FD1 /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				35584CE52918663400860FD1 /* UpdateDepartureDateView.xib */,
 				35584CE92918667500860FD1 /* SearchByDateView.xib */,
 				35584CEF291866F100860FD1 /* SearchByLocationView.xib */,
+				350E044C291899C9007B9FB9 /* AddItemsView.xib */,
 				35167C1929185F2D001DE9B1 /* OrderViewController.swift */,
 				35584CD4291863CD00860FD1 /* CreateOrderViewController.swift */,
 				35584CD82918642000860FD1 /* ViewOrderViewController.swift */,
@@ -205,6 +210,7 @@
 				35584CE42918663400860FD1 /* UpdateDepartureDateViewController.swift */,
 				35584CE82918667500860FD1 /* SearchByDateViewController.swift */,
 				35584CEE291866F100860FD1 /* SearchByLocationViewController.swift */,
+				350E044B291899C9007B9FB9 /* AddItemsViewController.swift */,
 			);
 			path = LogisticOrder;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				35FC17F82915818C00A734AF /* LocationView.xib in Resources */,
 				35D7AEA7291806E100AF181B /* CreateLocationView.xib in Resources */,
 				35D7AE9A29171C8800AF181B /* ViewItemView.xib in Resources */,
+				350E044E291899C9007B9FB9 /* AddItemsView.xib in Resources */,
 				35167C1C29185F2D001DE9B1 /* OrderView.xib in Resources */,
 				35FC17E529156F4400A734AF /* Assets.xcassets in Resources */,
 				35584CE32918653A00860FD1 /* DeleteOrderView.xib in Resources */,
@@ -317,6 +324,7 @@
 				35FC17F229157B1B00A734AF /* MainViewController.swift in Sources */,
 				35FC17F429157C7900A734AF /* ItemViewController.swift in Sources */,
 				35584CE62918663400860FD1 /* UpdateDepartureDateViewController.swift in Sources */,
+				350E044D291899C9007B9FB9 /* AddItemsViewController.swift in Sources */,
 				35584CDA2918642000860FD1 /* ViewOrderViewController.swift in Sources */,
 				35584CEA2918667600860FD1 /* SearchByDateViewController.swift in Sources */,
 				35FC17E029156F4300A734AF /* ViewController.swift in Sources */,

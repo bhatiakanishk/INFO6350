@@ -26,7 +26,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8b4-SV-EtN">
-                    <rect key="frame" x="137" y="85" width="140" height="41"/>
+                    <rect key="frame" x="137" y="106" width="140" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -40,23 +40,6 @@
                     </buttonConfiguration>
                     <connections>
                         <action selector="createItemTap:" destination="-1" eventType="touchUpInside" id="vCJ-af-k0l"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Di4-KF-96I">
-                    <rect key="frame" x="137" y="370" width="140" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Delete Item">
-                                <attributes>
-                                    <font key="NSFont" size="20" name="Helvetica"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="deleteItemTap:" destination="-1" eventType="touchUpInside" id="IcK-pi-Kmm"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFm-B4-aAm">
@@ -78,7 +61,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sTt-3A-MSw">
-                    <rect key="frame" x="137" y="174" width="140" height="41"/>
+                    <rect key="frame" x="137" y="187" width="140" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
                         <attributedString key="attributedTitle">
@@ -109,6 +92,23 @@
                     </buttonConfiguration>
                     <connections>
                         <action selector="viewItemTap:" destination="-1" eventType="touchUpInside" id="Lle-UK-ByJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Di4-KF-96I">
+                    <rect key="frame" x="140" y="361" width="140" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Delete Item">
+                                <attributes>
+                                    <font key="NSFont" size="20" name="Helvetica"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="deleteItemTap:" destination="-1" eventType="touchUpInside" id="IcK-pi-Kmm"/>
                     </connections>
                 </button>
             </subviews>

@@ -15,6 +15,13 @@ class CreateOrderViewController: UIViewController {
     @IBOutlet weak var tfDepartureDate: UITextField!
     @IBOutlet weak var tfItemId: UITextField!
     @IBOutlet weak var tfItemQuantity: UITextField!
+    @IBOutlet weak var tfItemId2: UITextField!
+    @IBOutlet weak var tfItemQuantity2: UITextField!
+    @IBOutlet weak var tfItemId3: UITextField!
+    @IBOutlet weak var tfItemQuantity3: UITextField!
+    @IBOutlet weak var tfItemId4: UITextField!
+    @IBOutlet weak var tfItemQuantity4: UITextField!
+    
     
     var mainVC: MainViewController?
 

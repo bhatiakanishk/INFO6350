@@ -60,6 +60,14 @@ class OrderViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func btnAddItems(_ sender: Any) {
+        let vc = AddItemsViewController(nibName: "AddItemsView", bundle: nil)
+        vc.mainVC = mainVC
+        self.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func btnCloseTap(_ sender: Any) {
         dismiss(animated: true)
     }
