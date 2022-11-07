@@ -37,6 +37,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <connections>
+                        <action selector="doneId:" destination="-1" eventType="primaryActionTriggered" id="cmt-fi-SBV"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6t-lr-TYy">
                     <rect key="frame" x="20" y="129" width="65" height="33"/>
@@ -61,6 +64,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneStreet:" destination="-1" eventType="primaryActionTriggered" id="jbd-yq-vTE"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter city name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="Hka-TQ-USg">
                     <rect key="frame" x="20" y="264" width="374" height="34"/>
@@ -68,6 +74,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneCity:" destination="-1" eventType="primaryActionTriggered" id="jtH-g2-cFw"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter state name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="gm9-2H-XJ5">
                     <rect key="frame" x="20" y="337" width="374" height="34"/>
@@ -75,6 +84,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneState:" destination="-1" eventType="primaryActionTriggered" id="du2-kW-NqV"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter country name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="Ciz-53-Ge0">
                     <rect key="frame" x="20" y="410" width="374" height="34"/>
@@ -82,6 +94,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneCountry:" destination="-1" eventType="primaryActionTriggered" id="cQ2-h3-Lg7"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter zipcode" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="mzV-6N-OcN">
                     <rect key="frame" x="20" y="480" width="374" height="34"/>
@@ -89,6 +104,9 @@
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="doneZipcode:" destination="-1" eventType="primaryActionTriggered" id="EGW-kc-h0G"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="iHN-aD-ej6">
                     <rect key="frame" x="166" y="538" width="83" height="35"/>

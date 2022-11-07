@@ -120,6 +120,4 @@ class UpdateItemViewController: UIViewController {
     @IBAction func doneDesc(_ sender: UITextField) {
         sender.resignFirstResponder()
     }
-    
-    
 }

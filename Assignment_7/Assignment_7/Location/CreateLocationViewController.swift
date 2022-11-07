@@ -99,4 +99,22 @@ class CreateLocationViewController: UIViewController {
         alertView.show()
     }
     
+    @IBAction func doneId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func doneStreet(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func doneCity(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func doneState(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func doneCountry(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func doneZipcode(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
 }

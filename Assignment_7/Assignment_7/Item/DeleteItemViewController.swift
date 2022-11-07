@@ -43,4 +43,7 @@ class DeleteItemViewController: UIViewController {
                                     cancelButtonTitle: "Okay")
         alertView.show()
     }
+    @IBAction func doneId(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
 }
