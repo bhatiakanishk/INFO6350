@@ -60,6 +60,8 @@ class UpdateDepartureDateViewController: UIViewController {
         mainVC.logisticsOrder[orderFoundIndex].departureDate = departureDate
         
         let updatedOrder = mainVC.logisticsOrder[orderFoundIndex]
+        
+        //Update record in the database
         DatabaseManager.shared.updateRecord(item: updatedOrder)
 
         self.showAlert(title: "Success", message: "Order departure date updated successfully")

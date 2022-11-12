@@ -82,15 +82,11 @@ class UpdateItemViewController: UIViewController {
         mainVC.items[itemFoundIndex].value = itemValue
         
         let updatedItem = mainVC.items[itemFoundIndex]
+        
+        //Update record in the database
         DatabaseManager.shared.updateRecord(item: updatedItem)
         
         self.showAlert(title: "Success", message: "Item updated successfully")
-        tfItemId.text = ""
-        tfItemName.text = ""
-        tfItemDescription.text = ""
-        tfItemWeight.text = ""
-        tfItemValue.text = ""
-        
     }
     
     @IBAction func btnCloseTap(_ sender: Any) {

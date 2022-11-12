@@ -132,6 +132,8 @@ class CreateOrderViewController: UIViewController {
         let order = LogisticsOrder(id: orderId, fromLocation: fromLocation, toLocation: toLocation, estimatedArrivalDate: arrivalDate, departureDate: departureDate, cost: orderCost, itemsCarried: orderItems)
         
         mainVC.logisticsOrder.append(order)
+        
+        //Creating new record in the database
         DatabaseManager.shared.saveRecord(item: order)
 
         self.showAlert(title: "Success", message: "Order created successfully")

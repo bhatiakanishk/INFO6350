@@ -23,12 +23,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        addDataToDB()
+        
+        //Only used for the first time to add dummy data into the database
+        //addDataToDB()
         generateDummyData()
     }
     
     func generateDummyData() {
-        // fetching dummy data from SQL
+        //Fetching dummy data from SQL
         items = DatabaseManager.shared.fetchRecords(type: Item.self)
         locations = DatabaseManager.shared.fetchRecords(type: Location.self)
         logisticsOrder = DatabaseManager.shared.fetchRecords(type: LogisticsOrder.self)

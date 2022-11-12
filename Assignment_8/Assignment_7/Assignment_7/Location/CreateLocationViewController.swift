@@ -84,6 +84,8 @@ class CreateLocationViewController: UIViewController {
         
         let location = Location(id: locationId, street: streetName, city: cityName, state: stateName, country: country, zip: zipCode)
         mainVC.locations.append(location)
+        
+        //Create record in the database
         DatabaseManager.shared.saveRecord(item: location)
         self.showAlert(title: "Success", message: "Location created successfully")
     }

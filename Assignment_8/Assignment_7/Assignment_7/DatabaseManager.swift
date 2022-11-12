@@ -54,6 +54,7 @@ class DatabaseManager {
         //Creating tables
         migrator.registerMigration("createTable") { db in
             
+            //Location Table
             try db.create(table: "location") { t in
                 t.column("id", .integer).primaryKey()
                 t.column("street", .text)
@@ -63,6 +64,7 @@ class DatabaseManager {
                 t.column("zip", .integer)
             }
             
+            //Item Table
             try db.create(table: "item") { t in
                 t.column("id", .integer).primaryKey()
                 t.column("name", .text)
@@ -71,6 +73,7 @@ class DatabaseManager {
                 t.column("value", .integer)
             }
             
+            //Order Table
             try db.create(table: "logisticsorder") { t in
                 t.column("id", .integer).primaryKey()
                 t.column("fromLocation", .text)

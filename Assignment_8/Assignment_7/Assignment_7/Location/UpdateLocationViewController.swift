@@ -98,14 +98,11 @@ class UpdateLocationViewController: UIViewController {
         mainVC.locations[locationFoundIndex].zip = zipCode
 
         let updatedLocation = mainVC.locations[locationFoundIndex]
+        
+        //Update record in the database
         DatabaseManager.shared.updateRecord(item: updatedLocation)
         
         self.showAlert(title: "Success", message: "Item updated successfully")
-        tfStreetName.text = ""
-        tfCityName.text = ""
-        tfStateName.text = ""
-        tfCountryName.text = ""
-        tfZipcode.text = ""
     }
     
     @IBAction func btnCloseTap(_ sender: Any) {

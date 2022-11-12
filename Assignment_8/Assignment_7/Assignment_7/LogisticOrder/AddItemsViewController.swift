@@ -70,6 +70,8 @@ class AddItemsViewController: UIViewController {
         mainVC.logisticsOrder[orderFoundIndex].cost += orderCost
         
         let updatedOrder = mainVC.logisticsOrder[orderFoundIndex]
+        
+        //Update record in the database
         DatabaseManager.shared.updateRecord(item: updatedOrder)
         
         self.showAlert(title: "Success", message: "Order items updated successfully")

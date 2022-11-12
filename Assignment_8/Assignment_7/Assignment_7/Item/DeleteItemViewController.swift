@@ -24,6 +24,8 @@ class DeleteItemViewController: UIViewController {
         let itemId = Int(tfItemId.text ?? "0") ?? 0
         if let itemIndex = mainVC.items.firstIndex(where: {$0.id == itemId}) {
             mainVC.items.remove(at: itemIndex)
+            
+            //Create record in the database
             DatabaseManager.shared.deleteRecord(type: Item.self, id: itemId)
             self.showAlert(title: "Success", message: "Delete successfully")
         } else {

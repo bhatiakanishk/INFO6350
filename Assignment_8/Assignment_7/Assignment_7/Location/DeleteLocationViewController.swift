@@ -24,6 +24,8 @@ class DeleteLocationViewController: UIViewController {
         let itemId = Int(tfLocationId.text ?? "0") ?? 0
         if let itemIndex = mainVC.locations.firstIndex(where: {$0.id == itemId}) {
             mainVC.locations.remove(at: itemIndex)
+            
+            //Delete record in the database
             DatabaseManager.shared.deleteRecord(type: Location.self, id: itemId)
             self.showAlert(title: "Success", message: "Deleted successfully")
         } else {

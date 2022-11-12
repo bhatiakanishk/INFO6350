@@ -21,6 +21,8 @@ class DeleteOrderViewController: UIViewController {
         let itemId = Int(tfOrderId.text ?? "0") ?? 0
         if let itemIndex = mainVC.logisticsOrder.firstIndex(where: {$0.id == itemId}) {
             mainVC.logisticsOrder.remove(at: itemIndex)
+            
+            //Deleting record form the database
             DatabaseManager.shared.deleteRecord(type: LogisticsOrder.self, id: itemId)
             self.showAlert(title: "Success", message: "Deleted successfully")
         } else {

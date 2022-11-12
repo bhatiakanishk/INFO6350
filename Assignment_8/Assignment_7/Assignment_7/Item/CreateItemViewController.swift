@@ -18,17 +18,6 @@ class CreateItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        tfItemValue.keyboardType = .numberPad
-//        tfItemWeight.keyboardType = .numberPad
-//
-//        tfItemId.delegate = self
-//        tfItemName.delegate = self
-//        tfItemDescription.delegate = self
-//        tfItemWeight.delegate = self
-//        tfItemValue.delegate = self
-        
-
         // Do any additional setup after loading the view.
     }
     
@@ -77,13 +66,14 @@ class CreateItemViewController: UIViewController {
         
         let item = Item(id: itemId, name: itemName, desc: itemDesc, weight: itemWeight, value: itemValue)
         
-        // 1
+        //1 (Used for performance)
         mainVC.items.append(item)
+        //Create record in the database
         DatabaseManager.shared.saveRecord(item: item)
         
-        // 2
-//        DatabaseManager.shared.saveRecord(item: item)
-//        mainVC.items = DatabaseManager.shared.fetchRecords(type: Item.self)
+        // 2 (Not used)
+        //DatabaseManager.shared.saveRecord(item: item)
+        //mainVC.items = DatabaseManager.shared.fetchRecords(type: Item.self)
         
         self.showAlert(title: "Success", message: "Item created successfully")
     }
@@ -114,11 +104,3 @@ class CreateItemViewController: UIViewController {
     }
     
 }
-    
-    
-    
-//extension CreateItemViewController: UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        return true
-//    }
-//}
