@@ -1,22 +1,27 @@
 //
 //  DatabaseManager.swift
-//  Assignment_7
+//  Assignment_8
 //
 //  Created by Kanishk Bhatia on 11/8/22.
 //
 
 import Foundation
+//Importing GRDB Class
 import GRDB
 
 //var dbQueue: DatabaseQueue!
 
 class DatabaseManager {
+    //Variable for writing into database
     private let dbWriter: any DatabaseWriter
+    
+    //Variable for reading from the database
     var dbReader: DatabaseReader {
         dbWriter
     }
     static let shared = makeShared()
     
+    //Creating db.sqlite file
     private static func makeShared() -> DatabaseManager {
         do {
             let databaseURL = try FileManager.default
@@ -26,11 +31,13 @@ class DatabaseManager {
             
             //dbQueue = try DatabaseQueue(path: databaseURL.path)
             
+            //A database pool allows concurrent database accesses.
             let dbPool = try DatabasePool(path: databaseURL.path)
+            
             let databaseManager = try DatabaseManager(dbWriter: dbPool)
             return databaseManager
         } catch {
-            fatalError("Crashed xD \(error)")
+            fatalError("Crashed: \(error)")
         }
     }
     
@@ -44,6 +51,7 @@ class DatabaseManager {
         
         migrator.eraseDatabaseOnSchemaChange = true
         
+        //Creating tables
         migrator.registerMigration("createTable") { db in
             
             try db.create(table: "location") { t in
@@ -78,7 +86,11 @@ class DatabaseManager {
 }
 
 extension DatabaseManager {
+    
+    //Creating a generic parameter for flexibility and reusability
     //T - generic type
+    
+    //Function to save records (write)
     func saveRecord<T: MutablePersistableRecord>(item: T) {
         var item = item
         do {
@@ -89,7 +101,8 @@ extension DatabaseManager {
             print("Failed to save \(error)")
         }
     }
-        
+    
+    //Function to fetch records (read)
     func fetchRecords<T: FetchableRecord & TableRecord>(type: T.Type) ->[T] {
         do {
             let records = try dbReader.read { db in
@@ -97,28 +110,30 @@ extension DatabaseManager {
             }
             return records
         } catch {
-            print("error fetching \(error)")
+            print("Failed to fetch \(error)")
         }
         return []
     }
     
+    //Function to delete records
     func deleteRecord<T: FetchableRecord & TableRecord>(type: T.Type, id: Int) {
         do {
             try _ = dbWriter.write { db in
                 try T.deleteOne(db, key: id)
             }
         } catch {
-            print("delete failed \(error)")
+            print("Failed to delete \(error)")
         }
     }
     
+    //Functtion to update records
     func updateRecord<T: MutablePersistableRecord>(item: T) {
         do {
             try dbWriter.write { db in
                 try item.update(db)
             }
         } catch {
-            print("delete failed \(error)")
+            print("Failed to update \(error)")
         }
 
     }
