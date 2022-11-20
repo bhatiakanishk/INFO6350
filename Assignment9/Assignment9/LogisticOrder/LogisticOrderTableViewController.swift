@@ -28,6 +28,7 @@ class LogisticOrderTableViewController: UITableViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
         self.navigationItem.rightBarButtonItem = addButton
         
+        // Search bar
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -106,6 +107,7 @@ extension LogisticOrderTableViewController: UISearchResultsUpdating {
         if text.isEmpty {
             filteredResults = self.mainVC?.logisticsOrder ?? []
         } else {
+            // Search for estimateArrivalDate, departureDate, street, city, state, country, zipcode, fromLocation, toLocation
             filteredResults = mainVC.logisticsOrder.filter( {
                 dateFormatter.string(from: $0.estimatedArrivalDate).contains(text.lowercased())
                 || dateFormatter.string(from: $0.departureDate).contains(text.lowercased())

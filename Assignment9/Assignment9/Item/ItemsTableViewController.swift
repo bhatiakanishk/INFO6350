@@ -135,6 +135,7 @@ extension ItemsTableViewController: UISearchResultsUpdating {
         if text.isEmpty {
             filteredResults = self.mainVC?.items ?? []
         } else {
+            // Search for name, description
             filteredResults = mainVC.items.filter( {
                 $0.name.lowercased().contains(text.lowercased()) ||
                 $0.desc.lowercased().contains(text.lowercased()) ||

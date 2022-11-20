@@ -71,6 +71,8 @@ class DatabaseManager {
                 t.column("desc", .text)
                 t.column("weight", .integer)
                 t.column("value", .integer)
+                
+                //Save image as blob in the database
                 t.column("imageData", .blob)
             }
             
@@ -139,6 +141,5 @@ extension DatabaseManager {
         } catch {
             print("Failed to update \(error)")
         }
-
     }
 }

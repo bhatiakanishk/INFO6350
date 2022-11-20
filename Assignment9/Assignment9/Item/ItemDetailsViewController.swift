@@ -163,6 +163,7 @@ class ItemDetailsViewController: UIViewController {
             return
         }
         
+        // Image as pngData for high quality images
         mainVC.items[indexPath.row].imageData = imageView.image?.pngData()
         mainVC.items[indexPath.row].name = itemName
         mainVC.items[indexPath.row].desc = itemDesc
@@ -186,8 +187,6 @@ class ItemDetailsViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 }
-
-
 
 extension ItemDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

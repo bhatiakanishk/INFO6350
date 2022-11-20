@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         logisticsOrder = DatabaseManager.shared.fetchRecords(type: LogisticsOrder.self)
     }
     
+    // Dummy data add to db
     func addDataToDB() {
         let location1 = Location(id: 1,
                                   street: "Smith St",
@@ -97,7 +98,6 @@ class ViewController: UIViewController {
                                     cost: 100,
                                     itemsCarried: [OrderItem(item: item1, quantity: 1)])
         logisticsOrder.append(order1)
-    
 
         DatabaseManager.shared.saveRecord(item: location1)
         DatabaseManager.shared.saveRecord(item: location2)
@@ -109,19 +109,27 @@ class ViewController: UIViewController {
         DatabaseManager.shared.saveRecord(item: order1)
     }
     
+    // Segue between controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Segue to Items
         if let vc = segue.destination as? ItemsTableViewController {
             vc.mainVC = self
         }
+        
+        // Segue to Location
         if let vc = segue.destination as? LocationTableViewController {
             vc.mainVC = self
         }
+        
+        // Segue to Order
         if let vc = segue.destination as? LogisticOrderTableViewController {
             vc.mainVC = self
         }
     }
 }
 
+// Enum for create and modify
 enum ViewControllerMode {
     case create, modify
 }

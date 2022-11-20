@@ -24,6 +24,7 @@ struct LogisticsOrder: FetchableRecord, MutablePersistableRecord, Codable {
     }
 }
 
+// Items with quantity
 struct OrderItem: Codable {
     var item: Item
     var quantity: Int
@@ -33,6 +34,7 @@ struct OrderItem: Codable {
     }
 }
 
+// Order total
 class OrderItems: Codable {
     var items: [OrderItem] {
         didSet {

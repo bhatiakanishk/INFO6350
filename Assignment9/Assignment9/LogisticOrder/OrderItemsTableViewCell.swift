@@ -26,10 +26,10 @@ class OrderItemsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
+    // Add item quantity
     @IBAction func btnDecreaseTap(_ sender: Any) {
         if let item = item, quantity > 0 {
             quantity -= 1
@@ -39,6 +39,7 @@ class OrderItemsTableViewCell: UITableViewCell {
         }
     }
     
+    // Reduce item quantity
     @IBAction func btnIncreaseTap(_ sender: Any) {
         if let item = item {
             quantity += 1

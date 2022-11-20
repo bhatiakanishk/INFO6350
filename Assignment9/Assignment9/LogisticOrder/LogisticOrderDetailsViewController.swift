@@ -38,6 +38,7 @@ class LogisticOrderDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Create orders
     override func viewWillAppear(_ animated: Bool) {
         if vcMode == .modify {
             guard let mainVC = mainVC, let indexPath = indexPath else { return }
@@ -172,9 +173,9 @@ class LogisticOrderDetailsViewController: UIViewController {
 
 
 extension LogisticOrderDetailsViewController: UIPickerViewDelegate {
-    
 }
 
+// Location Picker
 extension LogisticOrderDetailsViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -192,7 +193,6 @@ extension LogisticOrderDetailsViewController: UIPickerViewDataSource {
     }
 }
 
-
 extension LogisticOrderDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let mainVC = mainVC else { return 0 }
@@ -209,12 +209,10 @@ extension LogisticOrderDetailsViewController: UITableViewDataSource {
             cell.tempSelectedOrderItems = tempSelectedOrderItems
             cell.item = item
             
-            
             if let tempSelectedOrderItem = tempSelectedOrderItems.items.first(where: { $0.item.id == item.id }) {
                 cell.quantity = tempSelectedOrderItem.quantity
                 cell.quantityLabel.text = "\(cell.quantity)"
             }
-
             cell.nameLabel.text = item.name
             
             if let imageData = item.imageData {
