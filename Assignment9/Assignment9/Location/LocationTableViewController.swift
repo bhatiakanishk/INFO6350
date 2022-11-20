@@ -19,9 +19,11 @@ class LocationTableViewController: UITableViewController {
 
         title = "Location Menu"
         
+        // Add button on navigation bar
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
         self.navigationItem.rightBarButtonItem = addButton
         
+        // Search bar
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -52,7 +54,8 @@ class LocationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredResults.count
     }
-
+    
+    // Location table view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "LocationCell")
         cell.textLabel?.text = filteredResults[indexPath.row].street
@@ -61,6 +64,7 @@ class LocationTableViewController: UITableViewController {
     }
     
     // Override to support editing the table view.
+    // Swipe to delete location function
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete, let mainVC = mainVC {
             let locationId = mainVC.locations[indexPath.row].id
