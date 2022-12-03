@@ -58,9 +58,11 @@ class LocationDetailsViewController: UIViewController {
         }
     }
     
+    // Function to create location
     func createLocation() {
         guard let mainVC = self.mainVC else { return }
         
+        //location id
         guard let locationId = Int(tfLocationId.text ?? "0") else {
             self.showAlert(title: "Error", message: "Invalid Location Id")
             return
@@ -116,15 +118,12 @@ class LocationDetailsViewController: UIViewController {
         }
         
         let location = Location(id: locationId, street: streetName, city: cityName, state: stateName, country: country, zip: String(zipCode))
+        mainVC.locations.append(location)
         
         //Create record in the database
-        APIUtils.shared.postLocation(location: location) {
-            DispatchQueue.main.async {
-                mainVC.locations.append(location)
-                DatabaseManager.shared.saveRecord(item: location)
-                self.showAlert(title: "Success", message: "Location created successfully")
-            }
-        }
+        DatabaseManager.shared.saveRecord(item: location)
+        self.showAlert(title: "Success", message: "Location created successfully")
+
     }
     
     func updateLocation() {

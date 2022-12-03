@@ -66,6 +66,7 @@ class ItemDetailsViewController: UIViewController {
         }
     }
     
+    // Create Item
     func createItem() {
         guard let mainVC = self.mainVC else { return }
 
@@ -111,28 +112,15 @@ class ItemDetailsViewController: UIViewController {
         let item = Item(imageData: imageView.image?.pngData(), id: itemId, name: itemName, desc: itemDesc, weight: itemWeight, value: itemValue)
         
         //1 (Used for performance)
-//        mainVC.items.append(item)
+        mainVC.items.append(item)
         //Create record in the database
-//        DatabaseManager.shared.saveRecord(item: item)
+        DatabaseManager.shared.saveRecord(item: item)
         
         // 2 (Not used)
         //DatabaseManager.shared.saveRecord(item: item)
         //mainVC.items = DatabaseManager.shared.fetchRecords(type: Item.self)
         
-//        self.showAlert(title: "Success", message: "Item created successfully")
-        
-        
-        
-        APIUtils.shared.postItem(item: item) {
-            DispatchQueue.main.async {
-                mainVC.items.append(item)
-                DatabaseManager.shared.saveRecord(item: item)
-                self.showAlert(title: "Success", message: "Item created successfully")
-            }
-        }
-
-        
-
+        self.showAlert(title: "Success", message: "Item created successfully")
     }
     
     func updateItem() {
