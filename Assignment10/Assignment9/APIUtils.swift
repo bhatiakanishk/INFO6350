@@ -1,6 +1,6 @@
 //
 //  APIUtils.swift
-//  Assignment9
+//  Assignment10
 //
 //  Created by Kanishk Bhatia on 11/26/22.
 //
@@ -8,6 +8,7 @@
 import Foundation
 
 class APIUtils {
+    //Mock API endpoint
     static let baseURL: String = "https://6382a5f81ada9475c8f10909.mockapi.io"
 
     static let shared = APIUtils()
@@ -17,6 +18,7 @@ class APIUtils {
     func getAllItems(completion: @escaping ([Item])->Void) {
         let session = URLSession(configuration: .default)
         
+        // URL for items
         let urlString: String = APIUtils.baseURL + "/items"
         guard let url = URL(string: urlString) else {
             print("invalid URL")
@@ -25,12 +27,14 @@ class APIUtils {
         
         let request = URLRequest(url: url)
         
+        // Check for API call
         let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error calling API \(error)")
                 return
             }
             
+            // Check for successful response
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 200, let data = data {
                     do {
@@ -48,6 +52,7 @@ class APIUtils {
         task.resume()
     }
     
+    // Post Item
     func postItem(item: Item, completion: @escaping ()->()) {
         let session = URLSession(configuration: .default)
         
@@ -74,6 +79,8 @@ class APIUtils {
                 print("Error calling API \(error)")
                 return
             }
+            
+            // Check for successful response and lead to creation
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 201 {
                     print("post success")
@@ -91,9 +98,11 @@ class APIUtils {
 
 
     // MARK: Locations
+    
     func getAllLocations(completion: @escaping ([Location])->Void) {
         let session = URLSession(configuration: .default)
         
+        // URL for locations
         let urlString: String = APIUtils.baseURL + "/locations"
         guard let url = URL(string: urlString) else {
             print("invalid URL")
@@ -102,12 +111,14 @@ class APIUtils {
         
         let request = URLRequest(url: url)
         
+        // Check for API Call
         let task = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error calling API \(error)")
                 return
             }
             
+            // Check for successful response
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 200, let data = data {
                     do {
@@ -128,6 +139,7 @@ class APIUtils {
     func postLocation(location: Location, completion: @escaping ()->()) {
         let session = URLSession(configuration: .default)
         
+        // URL for locations
         let urlString: String = APIUtils.baseURL + "/locations"
         guard let url = URL(string: urlString) else {
             print("invalid URL")
@@ -151,6 +163,8 @@ class APIUtils {
                 print("Error calling API \(error)")
                 return
             }
+            
+            // Check for successful response and lead to creation
             if let response = response as? HTTPURLResponse {
                 if response.statusCode == 201 {
                     print("post success")
