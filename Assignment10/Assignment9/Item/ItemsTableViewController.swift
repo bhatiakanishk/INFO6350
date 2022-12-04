@@ -87,17 +87,19 @@ class ItemsTableViewController: UITableViewController {
             } else {
                 // no order using these items -> DELETE
                 let item = mainVC.items[indexPath.row]
-                mainVC.items.remove(at: indexPath.row)
                 
                 //Create record in the database
                 DatabaseManager.shared.deleteRecord(type: Item.self, id: item.id)
+                
+                filteredResults.remove(at: indexPath.row)
+                mainVC.items = filteredResults
                 
                 // Delete the row from the data source
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

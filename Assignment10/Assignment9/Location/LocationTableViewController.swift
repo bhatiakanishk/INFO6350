@@ -72,17 +72,19 @@ class LocationTableViewController: UITableViewController {
             } else {
                 // no order using these location -> DELETE
                 let item = mainVC.locations[indexPath.row]
-                // Delete the row from the data source
-                mainVC.locations.remove(at: indexPath.row)
                 
-                //Delete record in the database
+                // Delete record in the database
                 DatabaseManager.shared.deleteRecord(type: Location.self, id: item.id)
+
+                // Delete the row from the data source
+                filteredResults.remove(at: indexPath.row)
+                mainVC.locations = filteredResults
 
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return !searchController.isActive
