@@ -12,20 +12,16 @@ class ItemsTableViewController: UITableViewController {
     var mainVC: ViewController?
     let searchController = UISearchController(searchResultsController: nil)
     
-    // Store search results
     var filteredResults: [Item] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set title of the screen
         title = "Item Menu"
         
-        // Add button on the navigation bars
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
         self.navigationItem.rightBarButtonItem = addButton
         
-        // Search Bar on swipe down
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -33,13 +29,11 @@ class ItemsTableViewController: UITableViewController {
         navigationItem.searchController = searchController
     }
     
-    // Notifying the viewController of the addition of view hierarchy
     override func viewWillAppear(_ animated: Bool) {
         filteredResults = mainVC?.items ?? []
         tableView.reloadData()
     }
     
-    // Functions on tapping add
     @objc func addTapped(_ sender:Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ItemDetailsVC") as? ItemDetailsViewController {
@@ -53,16 +47,12 @@ class ItemsTableViewController: UITableViewController {
         return 1
     }
     
-    // Table View for searched results
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredResults.count
     }
 
-    // Item table view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "ItemCell")
-        
-        // Adding image to item
         if let imageData = filteredResults[indexPath.row].imageData {
             cell.imageView?.image = UIImage(data: imageData)
         } else {
@@ -76,8 +66,6 @@ class ItemsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view delegate
-    
-    // Table view to edit items
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "ItemDetailsVC") as? ItemDetailsViewController {
@@ -89,21 +77,22 @@ class ItemsTableViewController: UITableViewController {
     }
 
     // Override to support editing the table view.
-    // Delete on swipe left table view
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete, let mainVC = mainVC {
             let itemId = mainVC.items[indexPath.row].id
             let orders = mainVC.logisticsOrder.filter( { $0.itemsCarried.contains { $0.item.id == itemId }} )
             if orders.count > 0 {
-                // Check if item exists in an order
-                showAlert(title: "Cannot Delete", message: "This item is already present in an order.")
+                // error
+                showAlert(title: "Cannot Delete", message: "This item is present in an order.")
             } else {
-                // No order using these items -> DELETE
+                // no order using these items -> DELETE
                 let item = mainVC.items[indexPath.row]
-                mainVC.items.remove(at: indexPath.row)
                 
                 //Create record in the database
                 DatabaseManager.shared.deleteRecord(type: Item.self, id: item.id)
+                
+                filteredResults.remove(at: indexPath.row)
+                mainVC.items = filteredResults
                 
                 // Delete the row from the data source
                 tableView.deleteRows(at: [indexPath], with: .fade)
@@ -135,7 +124,6 @@ extension ItemsTableViewController: UISearchResultsUpdating {
         if text.isEmpty {
             filteredResults = self.mainVC?.items ?? []
         } else {
-            // Search for name, description
             filteredResults = mainVC.items.filter( {
                 $0.name.lowercased().contains(text.lowercased()) ||
                 $0.desc.lowercased().contains(text.lowercased()) ||

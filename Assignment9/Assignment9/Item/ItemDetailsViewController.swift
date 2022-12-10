@@ -27,10 +27,8 @@ class ItemDetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    // View to create item
+    
     override func viewWillAppear(_ animated: Bool) {
-        
-        // Condition for updating item
         if vcMode == .modify {
             guard let mainVC = mainVC, let indexPath = indexPath else { return }
             title = "Update Item"
@@ -42,8 +40,6 @@ class ItemDetailsViewController: UIViewController {
             tfItemValue.text = "\(item.value)"
             tfItemWeight.text = "\(item.weight)"
             tfItemDescription.text = item.desc
-            
-            // Set image to item
             if let imageData = item.imageData {
                 imageView.image = UIImage(data: imageData)
             } else {
@@ -55,8 +51,6 @@ class ItemDetailsViewController: UIViewController {
         }
     }
 
-    
-    // Select imgage botton
     @IBAction func selectNewImageTap(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -72,7 +66,6 @@ class ItemDetailsViewController: UIViewController {
         }
     }
     
-    // Create Item
     func createItem() {
         guard let mainVC = self.mainVC else { return }
 
@@ -127,9 +120,9 @@ class ItemDetailsViewController: UIViewController {
         //mainVC.items = DatabaseManager.shared.fetchRecords(type: Item.self)
         
         self.showAlert(title: "Success", message: "Item created successfully")
+
     }
     
-    // Update Item
     func updateItem() {
         guard let mainVC = mainVC, let indexPath = indexPath else { return }
 
@@ -163,7 +156,6 @@ class ItemDetailsViewController: UIViewController {
             return
         }
         
-        // Image as pngData for high quality images
         mainVC.items[indexPath.row].imageData = imageView.image?.pngData()
         mainVC.items[indexPath.row].name = itemName
         mainVC.items[indexPath.row].desc = itemDesc
@@ -176,9 +168,9 @@ class ItemDetailsViewController: UIViewController {
         DatabaseManager.shared.updateRecord(item: updatedItem)
         
         self.showAlert(title: "Success", message: "Item updated successfully")
+
     }
     
-    // Alert Function
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title,
                                                 message: message, preferredStyle: .alert)
@@ -187,6 +179,8 @@ class ItemDetailsViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
+
 
 extension ItemDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

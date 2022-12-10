@@ -28,7 +28,6 @@ class LogisticOrderTableViewController: UITableViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
         self.navigationItem.rightBarButtonItem = addButton
         
-        // Search bar
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -69,12 +68,13 @@ class LogisticOrderTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete, let mainVC = mainVC {
-            // Delete the row from the data source
             let item = mainVC.logisticsOrder[indexPath.row]
-            mainVC.logisticsOrder.remove(at: indexPath.row)
-            
             //Deleting record form the database
             DatabaseManager.shared.deleteRecord(type: LogisticsOrder.self, id: item.id)
+            
+            // Delete the row from the data source
+            filteredResults.remove(at: indexPath.row)
+            mainVC.logisticsOrder = filteredResults
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -107,7 +107,6 @@ extension LogisticOrderTableViewController: UISearchResultsUpdating {
         if text.isEmpty {
             filteredResults = self.mainVC?.logisticsOrder ?? []
         } else {
-            // Search for estimateArrivalDate, departureDate, street, city, state, country, zipcode, fromLocation, toLocation
             filteredResults = mainVC.logisticsOrder.filter( {
                 dateFormatter.string(from: $0.estimatedArrivalDate).contains(text.lowercased())
                 || dateFormatter.string(from: $0.departureDate).contains(text.lowercased())

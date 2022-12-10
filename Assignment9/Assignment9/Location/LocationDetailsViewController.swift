@@ -58,11 +58,9 @@ class LocationDetailsViewController: UIViewController {
         }
     }
     
-    // Function to create location
     func createLocation() {
         guard let mainVC = self.mainVC else { return }
         
-        //location id
         guard let locationId = Int(tfLocationId.text ?? "0") else {
             self.showAlert(title: "Error", message: "Invalid Location Id")
             return
@@ -126,7 +124,6 @@ class LocationDetailsViewController: UIViewController {
 
     }
     
-    // Update Location function
     func updateLocation() {
         guard let mainVC = mainVC, let indexPath = indexPath else { return }
         

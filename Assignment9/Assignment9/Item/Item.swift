@@ -11,7 +11,6 @@ import UIKit
 
 struct Item: FetchableRecord, MutablePersistableRecord, Codable, Equatable {
     
-    // Image Data
     var imageData: Data?
     let id: Int
     var name: String
