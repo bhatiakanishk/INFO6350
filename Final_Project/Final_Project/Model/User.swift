@@ -2,7 +2,7 @@
 //  User.swift
 //  Final_Project
 //
-//  Created by Raj Kalpesh Mehta on 12/5/22.
+//  Created by Kanishk Bhatia on 12/5/22.
 //
 
 import Foundation
