@@ -87,7 +87,7 @@
         <!--Login View Controller-->
         <scene sceneID="hNQ-3e-LUJ">
             <objects>
-                <viewController title="Login View Controller" id="uuk-ZN-wjh" sceneMemberID="viewController">
+                <viewController title="Login View Controller" id="uuk-ZN-wjh" customClass="LoginViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CZ0-l8-kf8">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,6 +142,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="845-Qc-owg"/>
                     <connections>
+                        <outlet property="emailTf" destination="fH8-OE-Ve0" id="zzb-zu-bSK"/>
+                        <outlet property="errorLabel" destination="Bw7-7P-ltj" id="k8e-H1-bjx"/>
+                        <outlet property="loginButton" destination="7Rm-59-ygK" id="FEb-tx-nAC"/>
+                        <outlet property="passwordTf" destination="tcL-Vp-oH1" id="YUJ-z0-9Hp"/>
                         <segue destination="Z9B-eb-tqq" kind="show" id="g6X-gP-ciK"/>
                     </connections>
                 </viewController>
