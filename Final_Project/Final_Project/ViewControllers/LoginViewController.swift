@@ -23,10 +23,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTf.delegate = self
         passwordTf.delegate = self
         
+        setupElements()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        clearError()
+        resetFields()
     }
     
     func resetFields() {
@@ -34,6 +38,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTf.text = ""
     }
     
+    func clearError() {
+        errorLabel.text = "error"
+        errorLabel.alpha = 0
+    }
+    
+    func showError(_ message:String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+    
+    func setupElements() {
+        clearError()
+        
+        emailTf.text = ""
+        passwordTf.text = ""
+    }
+    
+    func validateFields() -> String {
+        if Utilities.sanitizeTextInput(emailTf.text!) == "" ||
+            Utilities.sanitizeTextInput(passwordTf.text!) == "" {
+            return "Please fill in all fields."
+        }
+    }
 
     /*
     // MARK: - Navigation
