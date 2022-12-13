@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Storyboard {
+    static let userPostsViewController = "UserPostVC"
+    static let authDashboardViewController = "authDashboardVC"
+    static let userDashboardViewController = "UserDashbordVC"
+    static let loginViewController = "LoginVC"
+    
+}
