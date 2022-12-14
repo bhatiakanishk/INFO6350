@@ -30,7 +30,7 @@
         <!--About-->
         <scene sceneID="wQY-9h-j8L">
             <objects>
-                <viewController title="About" id="oMf-sj-aMA" sceneMemberID="viewController">
+                <viewController title="About" id="oMf-sj-aMA" customClass="AboutViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Drk-DL-AMF">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,6 +62,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="info.circle.fill" catalog="system" id="YHF-O6-IlM"/>
+                    <connections>
+                        <outlet property="aboutTf" destination="lvt-Nh-Sql" id="hdF-na-0Iq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcO-R0-D9a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -303,7 +306,7 @@
         <!--PostViewController-->
         <scene sceneID="ng2-Tf-fSh">
             <objects>
-                <viewController title="PostViewController" id="ond-wR-bX2" sceneMemberID="viewController">
+                <viewController title="PostViewController" id="ond-wR-bX2" customClass="PostCRUViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2mn-pz-PuU">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,6 +368,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9zw-WF-cDK"/>
+                    <connections>
+                        <outlet property="actionButton" destination="1ky-Bl-0ol" id="D35-Sy-wY2"/>
+                        <outlet property="descriptionTf" destination="r3C-cY-8kS" id="y9c-PQ-1WX"/>
+                        <outlet property="errorLabel" destination="xJQ-qm-uAZ" id="JRn-Id-LSQ"/>
+                        <outlet property="lastUpdatedLabel" destination="ZKb-Nc-4ys" id="jrB-7Z-eK6"/>
+                        <outlet property="titleLabel" destination="mi9-zV-K1C" id="mve-fx-Q4o"/>
+                        <outlet property="titleTf" destination="GCn-Qn-CIz" id="Ipj-J5-Lb4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaL-a0-Dgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -438,7 +449,7 @@
         <!--PostDetailsViewController-->
         <scene sceneID="8sg-Z3-Yjm">
             <objects>
-                <viewController title="PostDetailsViewController" id="mf1-Kx-kTH" sceneMemberID="viewController">
+                <viewController title="PostDetailsViewController" id="mf1-Kx-kTH" customClass="PostDetailsViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wjA-Zy-ax2">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -487,6 +498,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ITf-8K-A7U"/>
+                    <connections>
+                        <outlet property="createdByLabel" destination="H8k-NP-JeZ" id="tlf-RV-Oqw"/>
+                        <outlet property="createdOnLabel" destination="mmh-7e-E6N" id="j0f-xC-eTp"/>
+                        <outlet property="descriptionTextView" destination="DgO-ab-O5n" id="ouY-c9-gDE"/>
+                        <outlet property="titleLabel" destination="bpO-nO-jl2" id="w0o-MK-zRo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRu-92-dv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
