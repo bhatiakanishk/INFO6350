@@ -17,6 +17,7 @@
 		3553B640293E690300E03891 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553B63F293E690300E03891 /* User.swift */; };
 		3553B645293E7BE200E03891 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3553B644293E7BE200E03891 /* Utilities.swift */; };
 		7549FB7953C2DA01AE09A4C5 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69C5474E7FAF2FB0F8788AC /* Pods_Final_Project.framework */; };
+		B63EF883294996A800CF5397 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63EF882294996A800CF5397 /* RegisterViewController.swift */; };
 		B6F29B022949116E00FF90EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F29B012949116E00FF90EF /* LoginViewController.swift */; };
 		D0219B52294703B000C60C15 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D0219B51294703B000C60C15 /* Podfile */; };
 		D0381F8229470C2E00BC4706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0381F8129470C2E00BC4706 /* GoogleService-Info.plist */; };
@@ -38,6 +39,7 @@
 		3553B644293E7BE200E03891 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		7413C5E5C61C60AD955A65E6 /* Pods-Final_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.debug.xcconfig"; path = "Target Support Files/Pods-Final_Project/Pods-Final_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		9C22F6F46ECC458EE52B0C22 /* Pods-Final_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.release.xcconfig"; path = "Target Support Files/Pods-Final_Project/Pods-Final_Project.release.xcconfig"; sourceTree = "<group>"; };
+		B63EF882294996A800CF5397 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B6F29B012949116E00FF90EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C69C5474E7FAF2FB0F8788AC /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0219B51294703B000C60C15 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				B6F29B012949116E00FF90EF /* LoginViewController.swift */,
+				B63EF882294996A800CF5397 /* RegisterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F29B022949116E00FF90EF /* LoginViewController.swift in Sources */,
+				B63EF883294996A800CF5397 /* RegisterViewController.swift in Sources */,
 				3553B645293E7BE200E03891 /* Utilities.swift in Sources */,
 				3553B62D293E607200E03891 /* ViewController.swift in Sources */,
 				3553B629293E607200E03891 /* AppDelegate.swift in Sources */,

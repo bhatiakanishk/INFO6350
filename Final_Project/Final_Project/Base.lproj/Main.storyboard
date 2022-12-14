@@ -162,7 +162,7 @@
         <!--Register View Controller-->
         <scene sceneID="Pf8-hk-EPY">
             <objects>
-                <viewController title="Register View Controller" id="Z9B-eb-tqq" sceneMemberID="viewController">
+                <viewController title="Register View Controller" id="Z9B-eb-tqq" customClass="RegisterViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zBp-z2-XYT">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,6 +214,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-Kf-f76">
                                         <rect key="frame" x="0.0" y="546" width="334" height="48"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                        <connections>
+                                            <action selector="RegisterBtn:" destination="Z9B-eb-tqq" eventType="touchUpInside" id="DRD-bV-cZD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -230,6 +233,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="uGM-fY-V1e"/>
                     <connections>
+                        <outlet property="confirmPasswordTf" destination="m4e-aQ-aux" id="DSw-v9-qPb"/>
+                        <outlet property="emailTf" destination="sAq-Rj-sSN" id="gJZ-dm-fZt"/>
+                        <outlet property="errorLabel" destination="m1b-jx-uWF" id="Rs2-hB-IGr"/>
+                        <outlet property="firstNameTf" destination="yIM-A5-i5g" id="Sxs-kd-FRQ"/>
+                        <outlet property="lastNameTf" destination="kVQ-xJ-8jF" id="Kwd-ng-3oa"/>
+                        <outlet property="passwordTf" destination="FTh-f2-76P" id="fRe-vs-gD2"/>
                         <segue destination="OiZ-ym-OJW" kind="show" identifier="registerSuccess" id="9W4-ZP-r56"/>
                     </connections>
                 </viewController>
