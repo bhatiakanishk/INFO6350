@@ -55,13 +55,69 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTf.text = ""
     }
     
-    func validateFields() -> String {
-        if Utilities.sanitizeTextInput(emailTf.text!) == "" ||
-            Utilities.sanitizeTextInput(passwordTf.text!) == "" {
-            return "Please fill in all fields."
+    func validateFields() -> String? {
+        if Utilities.textInput(emailTf.text!) == "" ||
+            Utilities.textInput(passwordTf.text!) == "" {
+            return "Please enter all fields"
         }
+        let emailTf = Utilities.textInput(emailTf.text!)
+        
+        if Utilities.emailValid(emailTf) == false {
+            return "Invalid email address"
+        }
+        return nil
+    }
+    
+    func textFieldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
 
+    @IBAction func loginBtn(_ sender: Any) {
+        clearError()
+        
+        loginButton.isEnabled = false
+        
+        let error = validateFields()
+        
+        if error != nil {
+            showError(error!)
+        } else {
+            let email = Utilities.textInput(emailTf.text!)
+            let password = Utilities.textInput(passwordTf.text!)
+            
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if error != nil {
+                    switch AuthErrorCode(rawValue: error!._code) {
+                    case .userNotFound:
+                        self.showError("User not registered")
+                    case .networkError:
+                        self.showError("Internet not connected")
+                    case .invalidCredential, .invalidEmail, .wrongPassword:
+                        self.showError("Invalid credentials")
+                    default:
+                        self.showError(error!.localizedDescription)
+                    }
+                } else {
+                    self.resetFields()
+                    self.performSegue(withIdentifier: "loginSuccess", sender: nil)
+                }
+            }
+        }
+        self.loginButton.isEnabled = true
+    }
+    
+    func goToDashboard() {
+        let userPostViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.userPostsViewController) as? UserPostsTableViewController
+        navigationController?.pushViewController(userPostViewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
