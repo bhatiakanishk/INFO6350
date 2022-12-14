@@ -352,6 +352,9 @@
                                         <rect key="frame" x="0.0" y="521.66666666666663" width="334" height="53.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <connections>
+                                            <action selector="doAction:" destination="ond-wR-bX2" eventType="touchUpInside" id="TUx-aS-sIj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
