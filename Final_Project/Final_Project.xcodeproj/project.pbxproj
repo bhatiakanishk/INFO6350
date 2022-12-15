@@ -21,6 +21,8 @@
 		B63EF88529499F3A00CF5397 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63EF88429499F3A00CF5397 /* AboutViewController.swift */; };
 		B63EF8872949A0A500CF5397 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63EF8862949A0A500CF5397 /* PostDetailsViewController.swift */; };
 		B63EF8892949A34900CF5397 /* PostCRUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63EF8882949A34900CF5397 /* PostCRUViewController.swift */; };
+		B6AEE0EA294A72050019B2E2 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEE0E9294A72050019B2E2 /* PostsTableViewController.swift */; };
+		B6AEE0EC294A758A0019B2E2 /* UserPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEE0EB294A758A0019B2E2 /* UserPostsTableViewController.swift */; };
 		B6F29B022949116E00FF90EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F29B012949116E00FF90EF /* LoginViewController.swift */; };
 		D0219B52294703B000C60C15 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D0219B51294703B000C60C15 /* Podfile */; };
 		D0381F8229470C2E00BC4706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0381F8129470C2E00BC4706 /* GoogleService-Info.plist */; };
@@ -46,6 +48,8 @@
 		B63EF88429499F3A00CF5397 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B63EF8862949A0A500CF5397 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		B63EF8882949A34900CF5397 /* PostCRUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCRUViewController.swift; sourceTree = "<group>"; };
+		B6AEE0E9294A72050019B2E2 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		B6AEE0EB294A758A0019B2E2 /* UserPostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsTableViewController.swift; sourceTree = "<group>"; };
 		B6F29B012949116E00FF90EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C69C5474E7FAF2FB0F8788AC /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0219B51294703B000C60C15 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -144,9 +148,11 @@
 			children = (
 				B6F29B012949116E00FF90EF /* LoginViewController.swift */,
 				B63EF882294996A800CF5397 /* RegisterViewController.swift */,
-				B63EF88429499F3A00CF5397 /* AboutViewController.swift */,
-				B63EF8862949A0A500CF5397 /* PostDetailsViewController.swift */,
+				B6AEE0E9294A72050019B2E2 /* PostsTableViewController.swift */,
+				B6AEE0EB294A758A0019B2E2 /* UserPostsTableViewController.swift */,
 				B63EF8882949A34900CF5397 /* PostCRUViewController.swift */,
+				B63EF8862949A0A500CF5397 /* PostDetailsViewController.swift */,
+				B63EF88429499F3A00CF5397 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -281,6 +287,8 @@
 				B63EF8872949A0A500CF5397 /* PostDetailsViewController.swift in Sources */,
 				3553B640293E690300E03891 /* User.swift in Sources */,
 				3553B63E293E618200E03891 /* Post.swift in Sources */,
+				B6AEE0EC294A758A0019B2E2 /* UserPostsTableViewController.swift in Sources */,
+				B6AEE0EA294A72050019B2E2 /* PostsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
